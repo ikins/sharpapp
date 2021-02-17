@@ -1,0 +1,54 @@
+/* .bg {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #1d3557;
+}
+
+@media only screen and (max-device-width: 1366px) {
+    .bg {
+        background-attachment: scroll;
+    }
+} */
+
+
+/* Video */
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100% !important;
+    height: auto !important;
+    z-index: -1;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+button {
+    position: relative;
+    z-index: 999;
+    background-color: unset;
+    border: medium none;
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    left: 0;
+    margin: 2em auto;
+    padding: 50px 50px;
+    right: 0;
+    top: 0;
+    border-radius: 50px;
+}
+
+button:focus {
+    outline: 0 !important;
+}
