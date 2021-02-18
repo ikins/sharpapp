@@ -22,7 +22,7 @@ class Authentication extends CI_Controller {
 		{
 			$data['title'] = 'Sharp Login';						
 			$data['main_content'] = 'frontend/auth/login';
-			$this->load->view('template/frontend/single-view', $data);
+			$this->load->view('template/backend/single-view', $data);
 		}
 		else
 		{
@@ -34,7 +34,7 @@ class Authentication extends CI_Controller {
 	{		
 	
 		
-		$this->form_validation->set_message('required', '<i class="fa fa-times-circle-o"></i> Anda belum memberikan %s '); 
+		$this->form_validation->set_message('required', '<i class="fa fa-times"></i> Required %s '); 
 		//------------------Valid
 		$this->form_validation->set_rules('email', 'email', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');	
@@ -45,7 +45,7 @@ class Authentication extends CI_Controller {
 		{	
 			$data['title'] = 'Sharp Login';						
 			$data['main_content'] = 'frontend/auth/login';
-			$this->load->view('template/frontend/single-view', $data);
+			$this->load->view('template/backend/single-view', $data);
 		}
 		else
 		{
@@ -73,17 +73,17 @@ class Authentication extends CI_Controller {
 					$data['title'] = 'Sharp Login';						
 					$data['error'] = 'email "'.$email.'" failed';
 					$data['main_content'] = 'frontend/auth/login';
-					$this->load->view('template/frontend/aloneview', $data);
+					$this->load->view('template/backend/single-view', $data);
 				}		
 				elseif ($password_user != $password) 						
 				{
 
 					$data['title'] = 'Sharp Login';						
-					$data['error'] = 'Password Salah';
+					$data['error'] = 'Password failed';
 					$data['main_content'] = 'frontend/auth/login';
-					$this->load->view('template/frontend/aloneview', $data);
+					$this->load->view('template/backend/single-view', $data);
 				}					
-				elseif ( ($email_user == $email) and ($password_user == $password)
+				elseif ( ($email_user == $email) and ($password_user == $password))
 				{
 					
 					$data = array(
@@ -102,9 +102,9 @@ class Authentication extends CI_Controller {
 			}else {
 
 					$data['title'] = 'Sharp Login';						
-					$data['error'] = 'email "'.$email.'"  Belum Terdaftar atau Belum Terverifikasi';
+					$data['error'] = 'Login failed';
 					$data['main_content'] = 'frontend/auth/login';
-					$this->load->view('template/frontend/aloneview', $data);
+					$this->load->view('template/backend/single-view', $data);
 			}
 		}
 	}

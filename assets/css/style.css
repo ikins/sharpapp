@@ -52,3 +52,27 @@ button {
 button:focus {
     outline: 0 !important;
 }
+
+/* navbar */
+
+[class*=sidebar-dark] .brand-link {
+     border-bottom: 1px solid #dcdfe2; 
+}
+
+.main-header {
+    border-bottom: 0px solid #dee2e6;
+    z-index: 1034;
+}
+
+[class*=sidebar-dark-] .nav-sidebar>.nav-item.menu-open>.nav-link, [class*=sidebar-dark-] .nav-sidebar>.nav-item:hover>.nav-link, [class*=sidebar-dark-] .nav-sidebar>.nav-item>.nav-link:focus {
+    background-color: rgba(255,255,255,.1);
+    color: #292626;
+}
+
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link {
+    color: #575e6b;
+}
+
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:hover {
+    color: #111215;
+}

@@ -29,10 +29,20 @@ class Dashboard extends CI_Controller {
 		}	
 	}
 
+	//logout
+	function logout()
+	{
+		
+		$this->session->unset_userdata('is_user_sharp');
+		redirect('/');
+	}
+
 	public function dashboard()
 	{
 		//dashboard
-
+		$data['title'] = $this->title;
+		$data['main_content'] = 'backend/'.$this->ctrl.'/main';
+		$this->load->view('template/backend/view', $data);
 	}	
 
 	public function reqip()
