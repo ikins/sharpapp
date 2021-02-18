@@ -52,3 +52,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+
+//================================================================================backend
+$route['dashboard'] = 'backend/dashboard/dashboard';
+$route['feedback'] = 'backend/feedback/feedback';
+$route['game'] = 'backend/game/game';
+$route['visitor-buy'] = 'backend/visitorbuy/visitorbuy';
+$route['visitor-daily'] = 'backend/visitorbuy/visitordaily';
+$route['visitor-event-live'] = 'backend/visitorbuy/visitoreventlive';
+$route['visitor-product'] = 'backend/visitorbuy/visitorproduct';
+
+//sample code
+$route['reqip'] = 'backend/dashboard/reqip';
