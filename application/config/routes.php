@@ -9,6 +9,10 @@ $route['translate_uri_dashes'] = FALSE;
 //================================================================================frontend
 $route['login'] = 'frontend/authentication/login';
 $route['valid-login'] = 'frontend/authentication/valid_login';
+//Count Visitor Product
+$route['visit-product-category'] = 'frontend/visitor/visit_product_category';
+$route['visit-buy'] = 'frontend/visitor/visit_buy';
+
 
 //================================================================================backend
 $route['dashboard/logout'] = 'backend/dashboard/logout';

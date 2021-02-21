@@ -33,4 +33,6 @@ class Visitorproduct extends CI_Controller {
 		$data['main_content'] = 'backend/'.$this->ctrl.'/main';
 		$this->load->view('template/backend/view', $data);
 	}
+
+	
 }

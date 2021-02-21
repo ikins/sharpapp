@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    <input type="hidden" id="url" value="<?php echo base_url();?>">
     <div class="arc-container" id="bg_video">
         <div class="arc-reactor">
             <div class="arc-reactor-desc">
@@ -43,32 +43,32 @@
     <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light" id="nav-bar" style="display: none;">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <li class="nav-item" >
+                <li class="nav-item-main" >
                     <a class="nav-link " style="vertical-align: middle; line-height: 50px;"  id="audio" type="button">Audio Visual</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item-main">
                     <a class="nav-link " style="vertical-align: middle; line-height: 50px;" id="ref" type="button">Refrigenerator</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item-main">
                     <a class="nav-link" id="was" type="button">Washing Machine</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item-main">
                     <a class="nav-link" id="ac" type="button">Air Conditioner & Air Purifier</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item-main">
                     <a class="nav-link" id="ha" type="button">Small Home Appliance</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item-main">
                     <a class="nav-link" id="sl" type="button">Smartphone & Laptop</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item-main active">
                     <a class="nav-link" style="vertical-align: middle; line-height: 50px;"  id="stage" type="button">Stage</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " style="vertical-align: middle; line-height: 50px;"  id="games" type="button">Games</a>
+                <li class="nav-item-main">
+                    <a class="nav-link " style="vertical-align: middle; line-height: 50px;"  id="games" type="button" data-toggle="modal" data-target="#popGame">Games</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " style="vertical-align: middle; line-height: 50px;"  id="photo" type="button">Photo Booth</a>
+                <li class="nav-item-main">
+                    <a class="nav-link " style="vertical-align: middle; line-height: 50px;"  id="photo" type="button" data-toggle="modal" data-target="#popPhotobooth">Photo Booth</a>
                 </li> 
             </ul>
         </div>
@@ -116,6 +116,55 @@
         </div>
     </div>
 
+
+    <!-- Game -->
+    <div class="modal fade" id="popGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">Games</div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="embed-responsive embed-responsive-16by9">
+              <div data-height="800" data-width="450" class="game_frame game_loaded" style="width: 450px; height: 800px;">
+                            <iframe
+                                mozallowfullscreen="true"
+                                allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad"
+                                frameborder="0"
+                                src="//v6p9d9t4.ssl.hwcdn.net/html/3373978/index.html"
+                                msallowfullscreen="true"
+                                scrolling="no"
+                                allowfullscreen="true"
+                                webkitallowfullscreen="true"
+                                id="game_drop"
+                                allowtransparency="true"
+                            ></iframe>
+                        </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Photobooth -->
+    <div class="modal fade" id="popPhotobooth" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">Photo Booth</div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="vb-XLW7r2LP"  style="height: 800px"></div><script src="https://app.virtualbooth.me/embed/XLW7r2LP"></script><script>PhotoBooth.initWidget("vb-XLW7r2LP", "XLW7r2LP");</script>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url(); ?>/assets/js/function.js"></script>
@@ -127,6 +176,12 @@
                 $('button').toggleClass("active");
                 audio.pause();
                 $("#bg_video").slideUp();
+            });
+
+            $("#play-welcome").click(function(){
+                $("#welcomevideo").hide();
+                $("#nav-bar").show();
+                $("#homescreen").show();
             });
 
         });
@@ -163,12 +218,12 @@
             });
         }
 
-        function onPlayerReady(event) {
-            var playButton = document.getElementById("play-welcome");
-            playButton.addEventListener("click", function () {
-                welcomevideo.playVideo();
-            });
-        }
+        // function onPlayerReady(event) {
+        //     var playButton = document.getElementById("play-welcome");
+        //     playButton.addEventListener("click", function () {
+        //         welcomevideo.playVideo();
+        //     });
+        // }
 
          var done = false;
 
@@ -443,6 +498,196 @@
 
         });
     </script>
+
+    <!-- Ajax Count Visitor -->
+    <script type='text/javascript'>
+        //global variable
+        var base_url = $("#url").val();
+        //
+        $('#watch-audio').click(function(){
+          //alert('watch-audio');
+          $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'1' },
+               beforeSend: function() {
+                  // $('#table-content').html('<div style="margin: 120px 380px;"><img src="'+base_url+'/assets/images/loading.gif"/></div>');//show loading animation here
+               },
+               success: function(msg){
+                  //$('#table-content').html(msg);               
+               }
+            });
+        });
+        $('#audio-buy').click(function(){
+          //alert('watch-audio');
+          $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-buy',
+               data: { category:+'1' },
+               beforeSend: function() {
+                  // $('#table-content').html('<div style="margin: 120px 380px;"><img src="'+base_url+'/assets/images/loading.gif"/></div>');//show loading animation here
+               },
+               success: function(msg){
+                  //$('#table-content').html(msg);               
+               }
+            });
+        });
+        //
+        $('#watch-ref').click(function(){
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'2' },
+               beforeSend: function() {
+                  // $('#table-content').html('<div style="margin: 120px 380px;"><img src="'+base_url+'/assets/images/loading.gif"/></div>');//show loading animation here
+               },
+               success: function(msg){
+                  //$('#table-content').html(msg);               
+               }
+            });
+        });
+        $('#ref-buy').click(function(){
+          //alert('watch-audio');
+          $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-buy',
+               data: { category:+'2' },
+               beforeSend: function() {
+                  // $('#table-content').html('<div style="margin: 120px 380px;"><img src="'+base_url+'/assets/images/loading.gif"/></div>');//show loading animation here
+               },
+               success: function(msg){
+                  //$('#table-content').html(msg);               
+               }
+            });
+        });
+
+        $('#watch-ws').click(function(){
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'3' },
+               beforeSend: function() {
+                  // $('#table-content').html('<div style="margin: 120px 380px;"><img src="'+base_url+'/assets/images/loading.gif"/></div>');//show loading animation here
+               },
+               success: function(msg){
+                  //$('#table-content').html(msg);               
+               }
+            });
+        });
+        $('#ws-buy').click(function(){
+          //alert('watch-audio');
+          $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-buy',
+               data: { category:+'3' },
+               beforeSend: function() {
+                  // $('#table-content').html('<div style="margin: 120px 380px;"><img src="'+base_url+'/assets/images/loading.gif"/></div>');//show loading animation here
+               },
+               success: function(msg){
+                  //$('#table-content').html(msg);               
+               }
+            });
+        });
+
+        $('#watch-ac').click(function(){
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'4' },
+               beforeSend: function() {
+                  // $('#table-content').html('<div style="margin: 120px 380px;"><img src="'+base_url+'/assets/images/loading.gif"/></div>');//show loading animation here
+               },
+               success: function(msg){
+                  //$('#table-content').html(msg);               
+               }
+            });
+        });
+        $('#ac-buy').click(function(){
+          //alert('watch-audio');
+          $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-buy',
+               data: { category:+'4' },
+               beforeSend: function() {
+                  // $('#table-content').html('<div style="margin: 120px 380px;"><img src="'+base_url+'/assets/images/loading.gif"/></div>');//show loading animation here
+               },
+               success: function(msg){
+                  //$('#table-content').html(msg);               
+               }
+            });
+        });
+
+        $('#watch-ha').click(function(){
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'5' },
+               beforeSend: function() {
+                  // $('#table-content').html('<div style="margin: 120px 380px;"><img src="'+base_url+'/assets/images/loading.gif"/></div>');//show loading animation here
+               },
+               success: function(msg){
+                  //$('#table-content').html(msg);               
+               }
+            });
+        });
+        $('#ha-buy').click(function(){
+          //alert('watch-audio');
+          $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-buy',
+               data: { category:+'5' },
+               beforeSend: function() {
+                  // $('#table-content').html('<div style="margin: 120px 380px;"><img src="'+base_url+'/assets/images/loading.gif"/></div>');//show loading animation here
+               },
+               success: function(msg){
+                  //$('#table-content').html(msg);               
+               }
+            });
+        });
+
+        $('#watch-sl').click(function(){
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'6' },
+               beforeSend: function() {
+                  // $('#table-content').html('<div style="margin: 120px 380px;"><img src="'+base_url+'/assets/images/loading.gif"/></div>');//show loading animation here
+               },
+               success: function(msg){
+                  //$('#table-content').html(msg);               
+               }
+            });
+        });
+        $('#sl-buy').click(function(){
+          //alert('watch-audio');
+          $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-buy',
+               data: { category:+'6' },
+               beforeSend: function() {
+                  // $('#table-content').html('<div style="margin: 120px 380px;"><img src="'+base_url+'/assets/images/loading.gif"/></div>');//show loading animation here
+               },
+               success: function(msg){
+                  //$('#table-content').html(msg);               
+               }
+            });
+        });
+
+    </script>
+
+
 
     
 
