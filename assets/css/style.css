@@ -1,50 +1,9 @@
-/* .bg {
-    height: 100vh;
-    min-height: 500px;
-    background-image: url('bg.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #1d3557;
-}
-
-@media only screen and (max-device-width: 1366px) {
-    .bg {
-        background-attachment: scroll;
-    }
-} */
-
 @font-face {
     font-family: 'arlon';
     src: url('../font/arlon-regular-webfont.woff2') format('woff2'), url('assets/font/arlon-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-
-
-/* Video */
-
-
-/* 
-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100% !important;
-    height: auto !important;
-    z-index: -1;
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    -o-transition: all 1s;
-    transition: all 1s;
-}
-
-.video-frame {
-   
-} */
 
 .welcomeWrapper {
     position: fixed;
@@ -79,6 +38,32 @@ video {
     left: 0;
     width: 100%;
     height: 640px !important;
+}
+
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    .welcomeWrapper iframe {
+        height: 950px !important;
+    }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+    .welcomeWrapper iframe {
+        height: 800px !important;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    /* //For Projectors or Higher Resolution Screens (Full HD) */
+    .welcomeWrapper iframe {
+        height: 800px !important;
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    /* //For 4K Displays (Ultra HD) */
+    .welcomeWrapper iframe {
+        height: 2160px !important;
+    }
 }
 
 .fixed-bottom {
