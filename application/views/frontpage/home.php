@@ -14,6 +14,7 @@
 
 <body>
     <input type="hidden" id="url" value="<?php echo base_url();?>">
+    <!-- Button play -->
     <div class="arc-container" id="bg_video">
         <div class="arc-reactor">
             <div class="arc-reactor-desc">
@@ -31,18 +32,18 @@
             </div>
         </div>
     </div>
-
-    <div class="welcomeWrapper">
-        <div id="welcomevideo"></div>
-    </div>
-    
+    <!-- Welcome video -->
+    <video id="welcomevideo" preload="auto" style="display: none;">
+        <source src="<?= base_url(); ?>assets/video/welcome.mp4">
+    </video>    
+    <!-- kuula frame -->
     <div class="kuula" id="homescreen" style="display: none;">
-        <script src="https://static.kuula.io/embed.js" data-kuula="https://kuula.co/share/collection/7YGLt?fs=1&vr=1&sd=1&thumbs=-1&inst=0&info=0&logo=0" data-width="100%" data-height="640px"></script>
+        <script src="https://static.kuula.io/embed.js" data-kuula="https://kuula.co/share/collection/7YGLt?fs=0&vr=1&sd=1&thumbs=-1&inst=0&info=0&logo=-1" data-css="ku-embed"></script>
     </div>
-
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light" id="nav-bar" style="display: none;">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
                 <li class="nav-item-main" >
                     <a class="nav-link " style="vertical-align: middle; line-height: 50px;"  id="audio" type="button">Audio Visual</a>
                 </li>
@@ -80,16 +81,16 @@
             <button type="button" id="watch-ha" class="btn btn-light btn-buy" style="display: none;">Watch</button>
             <button type="button" id="watch-sl" class="btn btn-light btn-buy" style="display: none;">Watch</button>
         </div>
-        <div class="access-ecommerce">
-            <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=32844503" target="_new" type="button" id="audio-buy" class="btn btn-light btn-buy" style="display: none;">Buy Now</a>
-            <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=32843177" target="_new" type="button" id="ref-buy" class="btn btn-light btn-buy" style="display: none;">Buy Now</a>
-            <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=32845014" target="_new" type="button" id="ws-buy" class="btn btn-light btn-buy" style="display: none;">Buy Now</a>
-            <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=32843176" target="_new" type="button" id="ac-buy" class="btn btn-light btn-buy" style="display: none;">Buy Now</a>
-            <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=32843790" target="_new" type="button" id="ha-buy" class="btn btn-light btn-buy" style="display: none;">Buy Now</a>
-            <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=34850994" target="_new" type="button" id="sl-buy" class="btn btn-light btn-buy" style="display: none;">Buy Now</a>
-        </div>
     </nav>
-
+    <div class="access-ecommerce">
+        <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=32844503" target="_new" type="button" id="audio-buy" class="buy" style="display: none;"> <img class="buy" src="<?= base_url(); ?>assets/images/buy.png"> </a>
+        <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=32843177" target="_new" type="button" id="ref-buy" class="buy" style="display: none;"> <img class="buy" src="<?= base_url(); ?>assets/images/buy.png"></a>
+        <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=32845014" target="_new" type="button" id="ws-buy" class="buy" style="display: none;"> <img class="buy" src="<?= base_url(); ?>assets/images/buy.png"></a>
+        <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=32843176" target="_new" type="button" id="ac-buy" class="buy" style="display: none;"> <img class="buy" src="<?= base_url(); ?>assets/images/buy.png"></a>
+        <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=32843790" target="_new" type="button" id="ha-buy" class="buy" style="display: none;"> <img class="buy" src="<?= base_url(); ?>assets/images/buy.png"></a>
+        <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=34850994" target="_new" type="button" id="sl-buy" class="buy" style="display: none;"> <img class="buy" src="<?= base_url(); ?>assets/images/buy.png"></a>
+    </div>
+    <!-- tv frame -->
     <div class="tv">
         <div class="frame-tv" id="audio-play" style="display: none;">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/o_Sg7RirgWc?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -115,8 +116,6 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/1yP9cW8dbUQ?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
-
-
     <!-- Game -->
     <div class="modal fade" id="popGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -132,7 +131,7 @@
               <div data-height="800" data-width="450" class="game_frame game_loaded" style="width: 450px; height: 800px;">
                             <iframe
                                 mozallowfullscreen="true"
-                                allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad"
+                                allow="fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad"
                                 frameborder="0"
                                 src="//v6p9d9t4.ssl.hwcdn.net/html/3373978/index.html"
                                 msallowfullscreen="true"
@@ -169,25 +168,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url(); ?>/assets/js/function.js"></script>
 
+    <!-- Welcome Greeting -->
     <script type='text/javascript'>
-        $(document).ready(function() {
+       $(document).ready(function() {
+            var ctrlVideo = document.getElementById("welcomevideo");
             var audio = document.getElementById("audio-intro");
+            // document.getElementById('welcomevideo').addEventListener('ended', myHandler, false);
             $('button').click(function() {
+                // $("#welcomevideo").show();
+                // ctrlVideo.play();
+                // dev
+                // $("#homescreen").show();
+                $("#nav-bar").show();
+                // dev
                 $('button').toggleClass("active");
                 audio.pause();
                 $("#bg_video").slideUp();
             });
 
-            $("#play-welcome").click(function(){
+            function myHandler(e) {
                 $("#welcomevideo").hide();
-                $("#nav-bar").show();
                 $("#homescreen").show();
-            });
+                // $("#nav-bar").show();
+            }
 
         });
     </script>
 
-    <script>
+    <!-- <script>
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -239,7 +247,7 @@
             $("#nav-bar").show();
             $("#homescreen").show();
         }
-    </script>
+    </script> -->
 
     <!-- NAV BAR FUNCTION -->
     <script type='text/javascript'>
@@ -401,6 +409,58 @@
 
             // tombol youtube
             $("#watch-sl").show();
+            $("#watch-audio").hide();
+            $("#watch-ref").hide();
+            $("#watch-ws").hide();
+            $("#watch-ac").hide();
+            $("#watch-ha").hide();
+            // frame tv
+            $("#audio-play").hide();
+            $("#ref-play").hide();
+            $("#ws-play").hide();
+            $("#ac-play").hide();
+            $("#ha-play").hide();
+            $("#sl-play").hide();
+            // btn-shop
+            $("#audio-buy").hide();
+            $("#ref-buy").hide();
+            $("#ws-buy").hide();
+            $("#ac-buy").hide();
+            $("#ha-buy").hide();
+            $("#sl-buy").hide();
+        });
+
+
+        $("#games").click(function(){
+            $("#homescreen").show();
+            // tombol youtube
+            $("#watch-sl").hide();
+            $("#watch-audio").hide();
+            $("#watch-ref").hide();
+            $("#watch-ws").hide();
+            $("#watch-ac").hide();
+            $("#watch-ha").hide();
+            // frame tv
+            $("#audio-play").hide();
+            $("#ref-play").hide();
+            $("#ws-play").hide();
+            $("#ac-play").hide();
+            $("#ha-play").hide();
+            $("#sl-play").hide();
+            // btn-shop
+            $("#audio-buy").hide();
+            $("#ref-buy").hide();
+            $("#ws-buy").hide();
+            $("#ac-buy").hide();
+            $("#ha-buy").hide();
+            $("#sl-buy").hide();
+        });
+
+        $("#photo").click(function(){
+            $("#homescreen").show();
+
+            // tombol youtube
+            $("#watch-sl").hide();
             $("#watch-audio").hide();
             $("#watch-ref").hide();
             $("#watch-ws").hide();
