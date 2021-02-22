@@ -173,14 +173,10 @@
        $(document).ready(function() {
             var ctrlVideo = document.getElementById("welcomevideo");
             var audio = document.getElementById("audio-intro");
-            // document.getElementById('welcomevideo').addEventListener('ended', myHandler, false);
+            document.getElementById('welcomevideo').addEventListener('ended', myHandler, false);
             $('button').click(function() {
-                // $("#welcomevideo").show();
-                // ctrlVideo.play();
-                // dev
-                // $("#homescreen").show();
-                $("#nav-bar").show();
-                // dev
+                $("#welcomevideo").show();
+                ctrlVideo.play();
                 $('button').toggleClass("active");
                 audio.pause();
                 $("#bg_video").slideUp();
@@ -189,7 +185,7 @@
             function myHandler(e) {
                 $("#welcomevideo").hide();
                 $("#homescreen").show();
-                // $("#nav-bar").show();
+                $("#nav-bar").show();
             }
 
         });
