@@ -128,11 +128,11 @@ img.buy {
     color: #111215;
 }
 
-ul.nav-main {
+ul.navbar-nav {
     margin: -3px -15px -10px -12px;
 }
 
-li.item-main {
+li.nav-item {
     background-color: #c8c7c7;
     background-image: linear-gradient(#c8c7c7, #e6e7e8 80%);
     margin-right: 5px;
@@ -144,13 +144,13 @@ li.item-main {
     text-align: center;
 }
 
-li.item-main:hover {
+li.nav-item:hover {
     -moz-box-shadow: inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;
     box-shadow: inset 0 0 10px #000000;
 }
 
-li.item-main.active {
+li.nav-item.active {
     -moz-box-shadow: inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;
     box-shadow: inset 0 0 10px #000000;
@@ -279,4 +279,38 @@ a.btn.btn-light.btn-buy {
 
 input[type="number"] {
     min-width: 50px;
+}
+
+/* gamse */
+
+.games-register {
+    background-image: url("../../assets/images/games/register.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.games-play {
+    background-image: url("../../assets/images/games/play.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.games-success {
+    background-image: url("../../assets/images/games/success.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.games-failed {
+    background-image: url("../../assets/images/games/failed.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
 }

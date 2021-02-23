@@ -42,32 +42,32 @@
 
     <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light" id="nav-bar" style="display: none;">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-main">
-                <li class="nav-item item-main" >
+            <ul class="navbar-nav">
+                <li class="nav-item" >
                     <a class="nav-link " style="vertical-align: middle; line-height: 50px;"  id="audio" type="button">Audio Visual</a>
                 </li>
-                <li class="nav-item item-main">
+                <li class="nav-item">
                     <a class="nav-link " style="vertical-align: middle; line-height: 50px;" id="ref" type="button">Refrigenerator</a>
                 </li>
-                <li class="nav-item item-main">
+                <li class="nav-item">
                     <a class="nav-link" id="was" type="button">Washing Machine</a>
                 </li>
-                <li class="nav-item item-main">
+                <li class="nav-item">
                     <a class="nav-link" id="ac" type="button">Air Conditioner & Air Purifier</a>
                 </li>
-                <li class="nav-item item-main">
+                <li class="nav-item">
                     <a class="nav-link" id="ha" type="button">Small Home Appliance</a>
                 </li>
-                <li class="nav-item item-main">
+                <li class="nav-item">
                     <a class="nav-link" id="sl" type="button">Smartphone & Laptop</a>
                 </li>
-                <li class="nav-item item-main active">
+                <li class="nav-item active">
                     <a class="nav-link" style="vertical-align: middle; line-height: 50px;"  id="stage" type="button">Stage</a>
                 </li>
-                <li class="nav-item item-main">
-                    <a class="nav-link " style="vertical-align: middle; line-height: 50px;"  id="games" type="button" data-toggle="modal" data-target="#popGame">Games</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url(); ?>games" target="_blank" style="vertical-align: middle; line-height: 50px;" id="games" type="button" >Games</a>
                 </li>
-                <li class="nav-item item-main">
+                <li class="nav-item">
                     <a class="nav-link " style="vertical-align: middle; line-height: 50px;"  id="photo" type="button" data-toggle="modal" data-target="#popPhotobooth">Photo Booth</a>
                 </li> 
             </ul>
@@ -120,17 +120,11 @@
     <!-- Game -->
     <div class="modal fade" id="popGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="modal-title">Games</div>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
+        <div class="modal-content bg-games">
           <div class="modal-body">
             <div class="embed-responsive embed-responsive-16by9">
               <div data-height="800" data-width="450" class="game_frame game_loaded" style="width: 450px; height: 800px;">
-                            <iframe
+                            <!-- <iframe
                                 mozallowfullscreen="true"
                                 allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad"
                                 frameborder="0"
@@ -141,7 +135,7 @@
                                 webkitallowfullscreen="true"
                                 id="game_drop"
                                 allowtransparency="true"
-                            ></iframe>
+                            ></iframe> -->
                         </div>
             </div>
           </div>

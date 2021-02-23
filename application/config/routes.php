@@ -13,6 +13,12 @@ $route['valid-login'] = 'frontend/authentication/valid_login';
 $route['visit-product-category'] = 'frontend/visitor/visit_product_category';
 $route['visit-buy'] = 'frontend/visitor/visit_buy';
 
+//Games
+$route['games/register'] = 'frontend/games/register';
+$route['games/play'] = 'frontend/games/play';
+$route['games/success'] = 'frontend/games/success';
+$route['games/failed'] = 'frontend/games/failed';
+
 
 //================================================================================backend
 $route['dashboard/logout'] = 'backend/dashboard/logout';

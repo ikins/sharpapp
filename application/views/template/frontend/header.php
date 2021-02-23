@@ -13,4 +13,4 @@
   <!-- Main style -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition">
