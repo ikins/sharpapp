@@ -42,32 +42,32 @@
 
     <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light" id="nav-bar" style="display: none;">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item-main" >
+            <ul class="navbar-nav nav-main">
+                <li class="nav-item item-main" >
                     <a class="nav-link " style="vertical-align: middle; line-height: 50px;"  id="audio" type="button">Audio Visual</a>
                 </li>
-                <li class="nav-item-main">
+                <li class="nav-item item-main">
                     <a class="nav-link " style="vertical-align: middle; line-height: 50px;" id="ref" type="button">Refrigenerator</a>
                 </li>
-                <li class="nav-item-main">
+                <li class="nav-item item-main">
                     <a class="nav-link" id="was" type="button">Washing Machine</a>
                 </li>
-                <li class="nav-item-main">
+                <li class="nav-item item-main">
                     <a class="nav-link" id="ac" type="button">Air Conditioner & Air Purifier</a>
                 </li>
-                <li class="nav-item-main">
+                <li class="nav-item item-main">
                     <a class="nav-link" id="ha" type="button">Small Home Appliance</a>
                 </li>
-                <li class="nav-item-main">
+                <li class="nav-item item-main">
                     <a class="nav-link" id="sl" type="button">Smartphone & Laptop</a>
                 </li>
-                <li class="nav-item-main active">
+                <li class="nav-item item-main active">
                     <a class="nav-link" style="vertical-align: middle; line-height: 50px;"  id="stage" type="button">Stage</a>
                 </li>
-                <li class="nav-item-main">
+                <li class="nav-item item-main">
                     <a class="nav-link " style="vertical-align: middle; line-height: 50px;"  id="games" type="button" data-toggle="modal" data-target="#popGame">Games</a>
                 </li>
-                <li class="nav-item-main">
+                <li class="nav-item item-main">
                     <a class="nav-link " style="vertical-align: middle; line-height: 50px;"  id="photo" type="button" data-toggle="modal" data-target="#popPhotobooth">Photo Booth</a>
                 </li> 
             </ul>
