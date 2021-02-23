@@ -1,3 +1,41 @@
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    .arc-container {
+        --arc-core-size: 200px !important;
+    }
+    .arc-reactor {
+        top: 180px !important;
+    }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+    .arc-container {
+        --arc-core-size: 170px !important;
+    }
+    .arc-reactor {
+        top: 160px !important;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    /* //For Projectors or Higher Resolution Screens (Full HD) */
+    .arc-container {
+        --arc-core-size: 200px !important;
+    }
+    .arc-reactor {
+        top: 180px !important;
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    /* //For 4K Displays (Ultra HD) */
+    .arc-container {
+        --arc-core-size: 600px !important;
+    }
+    .arc-reactor {
+        top: 450px !important;
+    }
+}
+
 .arc-container {
     --arc-font-color: #fff;
     --arc-font-stroke-color: #000;

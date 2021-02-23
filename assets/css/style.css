@@ -1,20 +1,3 @@
-/* .bg {
-    height: 100vh;
-    min-height: 500px;
-    background-image: url('bg.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #1d3557;
-}
-
-@media only screen and (max-device-width: 1366px) {
-    .bg {
-        background-attachment: scroll;
-    }
-} */
-
 @font-face {
     font-family: 'arlon';
     src: url('../font/arlon-regular-webfont.woff2') format('woff2'), url('assets/font/arlon-regular-webfont.woff') format('woff');
@@ -22,46 +5,29 @@
     font-style: normal;
 }
 
-
-/* Video */
-
-
-/* 
-video {
+.ku-embed {
+    height: 100vh !important;
+    width: 100vw !important;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100% !important;
-    height: auto !important;
-    z-index: -1;
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    -o-transition: all 1s;
-    transition: all 1s;
 }
 
-.video-frame {
-   
-} */
-
-.welcomeWrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100% !important;
-    height: auto !important;
-    z-index: -1;
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    -o-transition: all 1s;
-    transition: all 1s;
+@media screen and (orientation:portrait) {
+    .ku-embed {
+        height: 100vh !important;
+        width: 100vw !important;
+    }
 }
 
-.welcomeWrapper iframe {
+@media screen and (orientation:landscape) {
+    .ku-embed {
+        height: 100vh !important;
+        width: 100vw !important;
+    }
+}
+
+#welcomevideo {
     position: fixed;
     top: 0;
     left: 0;
@@ -74,11 +40,6 @@ video {
     -moz-transition: all 1s;
     -o-transition: all 1s;
     transition: all 1s;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 640px !important;
 }
 
 .fixed-bottom {
@@ -107,6 +68,37 @@ button {
 
 button:focus {
     outline: 0 !important;
+}
+
+.access-ecommerce {
+    position: absolute;
+    top: 24rem;
+    left: 56rem;
+    z-index: 100;
+}
+
+img.buy {
+    height: 130px !important;
+}
+
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    .access-ecommerce {
+        top: 25rem;
+        left: 60rem;
+    }
+    img.buy {
+        height: 130px !important;
+    }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+    .access-ecommerce {
+        top: 24rem;
+        left: 56rem;
+    }
+    img.buy {
+        height: 130px !important;
+    }
 }
 
 
@@ -177,8 +169,10 @@ li.item-main.active {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    width: 100%;
-    height: 90%;
+    height: 100vh !important;
+    width: 100vw !important;
+    top: 0;
+    left: 0;
 }
 
 .frame-tv iframe {
@@ -191,6 +185,18 @@ li.item-main.active {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    .frame-tv iframe {
+        background-size: contain;
+        padding: 0.5% 13.5% 5%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 button.btn.btn-light.btn-buy {
@@ -214,6 +220,7 @@ a.btn.btn-light.btn-buy {
     padding: 12px;
     box-shadow: 0px 0px 10px #000000;
 }
+
 
 /* Modal */
 
