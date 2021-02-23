@@ -1,5 +1,4 @@
 
-// nav active
 $(document).ready(function() {
     "use strict";
     $('ul.navbar-nav > li').click(function(e) {
@@ -11,45 +10,50 @@ $(document).ready(function() {
 
 // kuula
 KuulaPlayerAPI.addEventListener("frameloaded", function(e) {
-    e.data.posts.forEach(function(post) {
-		var audio  = document.getElementById('audio');
-        var ref   = document.getElementById('ref');
-        var was   = document.getElementById('was');
-        var ac    = document.getElementById('ac');
-        var ha    = document.getElementById('ha');
-        var sl    = document.getElementById('sl');
-        var stage = document.getElementById('stage');
-
-		audio.addEventListener('click', function() {
-			KuulaPlayerAPI.load(e.frame, '73hmb');
-		});
-
-        ref.addEventListener('click', function() {
-			KuulaPlayerAPI.load(e.frame, '73hmZ'); 
-		});
-
-        was.addEventListener('click', function() {
-			KuulaPlayerAPI.load(e.frame, '73hmK');
-		});
-
-        ac.addEventListener('click', function() {
-			KuulaPlayerAPI.load(e.frame, '73hmc');
-		});
-
-        ha.addEventListener('click', function() {
-			KuulaPlayerAPI.load(e.frame, '73hmX');
-		});
-
-        sl.addEventListener('click', function() {
-			KuulaPlayerAPI.load(e.frame, '73hmJ');
-		});
-
-        stage.addEventListener('click', function() {
-			KuulaPlayerAPI.load(e.frame, '73hmv');
-		});
-
+	document.querySelector("#audio").addEventListener("click", function() {
+		KuulaPlayerAPI.setHeading(e.frame, 100);
+        KuulaPlayerAPI.setZoom(e.frame, -15);
 	});
+
+    document.querySelector("#ref").addEventListener("click", function() {
+		KuulaPlayerAPI.setHeading(e.frame, 135);
+        KuulaPlayerAPI.setZoom(e.frame, -15);
+	});
+
+    document.querySelector("#was").addEventListener("click", function() {
+		KuulaPlayerAPI.setHeading(e.frame, 165);
+        KuulaPlayerAPI.setZoom(e.frame, -15);
+	});
+
+    document.querySelector("#ac").addEventListener("click", function() {
+		KuulaPlayerAPI.setHeading(e.frame, 195);
+        KuulaPlayerAPI.setZoom(e.frame, -15);
+	});
+
+    document.querySelector("#ha").addEventListener("click", function() {
+		KuulaPlayerAPI.setHeading(e.frame, 225);
+        KuulaPlayerAPI.setZoom(e.frame, -15);
+	});
+
+    document.querySelector("#sl").addEventListener("click", function() {
+		KuulaPlayerAPI.setHeading(e.frame, 255);
+        KuulaPlayerAPI.setZoom(e.frame, -15);
+	});
+
+    document.querySelector("#stage").addEventListener("click", function() {
+		KuulaPlayerAPI.setHeading(e.frame, 0);
+        KuulaPlayerAPI.setZoom(e.frame, 0);
+	});
+
+    document.querySelector("#games").addEventListener("click", function() {
+		KuulaPlayerAPI.setHeading(e.frame, -60);
+        KuulaPlayerAPI.setZoom(e.frame, -5);
+	});
+
+    document.querySelector("#photo").addEventListener("click", function() {
+		KuulaPlayerAPI.setHeading(e.frame, 60);
+        KuulaPlayerAPI.setZoom(e.frame, -5);
+	});
+
+
 });
-
-
-
