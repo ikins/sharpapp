@@ -16,8 +16,8 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = ('Welcome');
-		$this->load->view('frontpage/home', $data);
+		$data['title'] = ('Sharp Virtual Exhibition');
+		$this->load->view('frontend/home/home', $data);
 
 		//check device access
 		$mobile = $this->agent->is_mobile();
@@ -110,5 +110,13 @@ class Welcome extends CI_Controller {
 		}
 
 		//print_r($history_visitor);
+	}
+
+	public function feedback()
+	{
+		$data['title'] = 'Sharp Feedback Form';						
+		$data['main_content'] = 'frontend/feedback/index';
+		$this->load->view('template/frontend/view', $data);
+
 	}
 }
