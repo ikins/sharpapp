@@ -1,0 +1,42 @@
+#menu .menu-link {
+    position: absolute;
+    z-index: 100;
+    left: 72rem;
+    top: 15px;
+    width: 200px;
+}
+
+@media (max-width: 1440px) {
+    #menu {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 440px) {
+    #menu {
+        width: 320px;
+        margin-top: 0px;
+    }
+    #menu .menu-link {
+        left: 16rem;
+        top: 15px;
+        width: 170px;
+    }
+    .bg-light {
+        background-color: transparent !important;
+    }
+    .fixed-bottom {
+        margin: unset;
+        -webkit-border-radius: unset;
+        border-radius: unset;
+        box-shadow: unset;
+    }
+    .navbar-toggler {
+        background-color: #e6e7e8;
+        border: 1px solid #e6e7e8;
+    }
+}
+
+img.icononframe {
+    width: 50px !important;
+}

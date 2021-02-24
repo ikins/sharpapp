@@ -20,12 +20,19 @@
     transition: all 1s;
 }
 
+.kuula {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.iframe-full,
 .ku-embed {
-    height: 100vh !important;
-    width: 100vw !important;
-    position: fixed;
-    top: 0;
-    left: 0;
+    width: 100%;
+    height: 100vh;
+    border: none;
+    z-index: 1;
 }
 
 @media screen and (orientation:portrait) {
@@ -49,6 +56,7 @@
     border-radius: 20px 20px 0px 0px;
     box-shadow: 0px 0px 0px 5px #e6e7e8;
     margin-bottom: -10px;
+    position: absolute !important;
 }
 
 button {
@@ -65,6 +73,11 @@ button {
     right: 0;
     top: 0;
     border-radius: 50px;
+    text-shadow: 1px 1px var(--c-sh-txt rgba(0, 0, 0, .5));
+    font: 900 1.5em calligraffitti, cursive;
+    filter: contrast(0.65);
+    transition: 0.2s ease-out;
+    cursor: pointer;
 }
 
 button:focus {
@@ -72,25 +85,22 @@ button:focus {
 }
 
 li.nav-item {
-    background-color: #c8c7c7;
-    background-image: linear-gradient(#c8c7c7, #e6e7e8 80%);
+    background-color: #cbcbcb;
+    background-image: linear-gradient(#cbcbcb, #f4f4f4 70%);
     margin-right: 5px;
     border-radius: 15px 15px 0px 0px;
     font-family: 'arlon';
     color: #212020;
-    text-align: center;
 }
 
 li.nav-item:hover {
-    -moz-box-shadow: inset 0 0 10px #000000;
-    -webkit-box-shadow: inset 0 0 10px #000000;
-    box-shadow: inset 0 0 10px #000000;
+    box-shadow: 0 0 0 0.0625em #cbcbcb;
+    background: linear-gradient(#b2b2b2, #f4f4f4) content-box, radial-gradient(#ededed, rgba(222, 222, 222, 0)) 50% 100% / 80% 0.125em no-repeat border-box, linear-gradient(#f4f4f4, #c9c9c9) border-box;
 }
 
 li.nav-item.active {
-    -moz-box-shadow: inset 0 0 10px #000000;
-    -webkit-box-shadow: inset 0 0 10px #000000;
-    box-shadow: inset 0 0 10px #000000;
+    box-shadow: 0 0 0 0.0625em #cbcbcb;
+    background: linear-gradient(#b2b2b2, #f4f4f4) content-box, radial-gradient(#ededed, rgba(222, 222, 222, 0)) 50% 100% / 80% 0.125em no-repeat border-box, linear-gradient(#f4f4f4, #c9c9c9) border-box;
 }
 
 .navbar-light .navbar-nav .nav-link {
