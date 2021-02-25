@@ -20,12 +20,19 @@
     transition: all 1s;
 }
 
+.kuula {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.iframe-full,
 .ku-embed {
-    height: 100vh !important;
-    width: 100vw !important;
-    position: fixed;
-    top: 0;
-    left: 0;
+    width: 100%;
+    height: 100vh;
+    border: none;
+    z-index: 1;
 }
 
 @media screen and (orientation:portrait) {
@@ -49,6 +56,7 @@
     border-radius: 20px 20px 0px 0px;
     box-shadow: 0px 0px 0px 5px #e6e7e8;
     margin-bottom: -10px;
+    position: absolute !important;
 }
 
 button {
@@ -72,25 +80,22 @@ button:focus {
 }
 
 li.nav-item {
-    background-color: #c8c7c7;
-    background-image: linear-gradient(#c8c7c7, #e6e7e8 80%);
+    background-color: #cbcbcb;
+    background-image: linear-gradient(#cbcbcb, #f4f4f4 70%);
     margin-right: 5px;
     border-radius: 15px 15px 0px 0px;
     font-family: 'arlon';
     color: #212020;
-    text-align: center;
 }
 
 li.nav-item:hover {
-    -moz-box-shadow: inset 0 0 10px #000000;
-    -webkit-box-shadow: inset 0 0 10px #000000;
-    box-shadow: inset 0 0 10px #000000;
+    box-shadow: 0 0 0 0.0625em #cbcbcb;
+    background: linear-gradient(#b2b2b2, #f4f4f4) content-box, radial-gradient(#ededed, rgba(222, 222, 222, 0)) 50% 100% / 80% 0.125em no-repeat border-box, linear-gradient(#f4f4f4, #c9c9c9) border-box;
 }
 
 li.nav-item.active {
-    -moz-box-shadow: inset 0 0 10px #000000;
-    -webkit-box-shadow: inset 0 0 10px #000000;
-    box-shadow: inset 0 0 10px #000000;
+    box-shadow: 0 0 0 0.0625em #cbcbcb;
+    background: linear-gradient(#b2b2b2, #f4f4f4) content-box, radial-gradient(#ededed, rgba(222, 222, 222, 0)) 50% 100% / 80% 0.125em no-repeat border-box, linear-gradient(#f4f4f4, #c9c9c9) border-box;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -99,7 +104,95 @@ li.nav-item.active {
     text-align: center;
 }
 
+#menu .menu-link {
+    position: absolute;
+    z-index: 100;
+    left: 72rem;
+    top: 15px;
+    width: 200px;
+}
+
+@media (max-width: 1440px) {
+    #menu {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 440px) {
+    #menu {
+        width: 320px;
+        margin-top: 0px;
+    }
+    #menu .menu-link {
+        left: 16rem;
+        top: 15px;
+        width: 170px;
+    }
+    .bg-light {
+        background-color: transparent !important;
+    }
+    .fixed-bottom {
+        margin: unset;
+        -webkit-border-radius: unset;
+        border-radius: unset;
+        box-shadow: unset;
+    }
+    .navbar-toggler {
+        background-color: #e6e7e8;
+        border: 1px solid #e6e7e8;
+    }
+}
+
+img.icononframe {
+    width: 50px !important;
+}
+
+.product {
+    width: 100%;
+    height: 100vh;
+    border: none;
+}
+
+.product iframe {
+    position: fixed;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-sizing: border-box;
+    background: url("../../assets/images/tv.png")center center no-repeat;
+    background-size: contain;
+    /* padding: 0.5% 12.9% 4.8%; */
+    /* on modal */
+    padding: 8.9% 0.7% 14.8%;
+    /* on modal */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+#shop .btn-shop {
+    position: absolute;
+    z-index: 100;
+    left: 57rem;
+    top: 27.5rem;
+    /* on modal */
+    left: 37rem;
+    top: 24.5rem;
+    /* on modal */
+    width: 200px;
+}
+
+img.buy-btn {
+    width: 200px !important;
+}
+
+
 /* Ikin 20210123*/
+
+
 /* navbar */
 
 [class*=sidebar-dark] .brand-link {
@@ -128,12 +221,14 @@ li.nav-item.active {
 
 
 /* Product Visitor Chart */
+
 #product_category {
     height: 450px;
 }
 
-.highcharts-figure, .highcharts-data-table table {
-    min-width: 320px; 
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 320px;
     max-width: 800px;
 }
 
@@ -146,29 +241,37 @@ li.nav-item.active {
     width: 100%;
     max-width: 500px;
 }
+
 .highcharts-data-table caption {
     padding: 1em 0;
     font-size: 1.2em;
     color: #555;
 }
+
 .highcharts-data-table th {
     font-weight: 600;
     padding: 0.5em;
 }
-.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
     padding: 0.5em;
 }
-.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
     background: #f8f8f8;
 }
+
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
 }
 
-
 input[type="number"] {
     min-width: 50px;
 }
+
 
 /* gamse */
 
