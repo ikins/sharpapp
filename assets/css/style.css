@@ -203,3 +203,62 @@ input[type="number"] {
     background-size: cover;
     height: 100%;
 }
+
+/*Nav Admin*/
+.main-header .navbar-nav .nav-item .top-item {
+    margin: 0;
+}
+
+.navbar-expand .navbar-nav {
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.main-header .navbar-nav .nav-item .top-item{
+    margin: 0;
+}
+
+.nav-sidebar>.top-item {
+    margin-bottom: 0;
+}
+
+.nav-sidebar .top-item>.nav-link {
+    position: relative;
+}
+
+li.top-item {
+    font-family: 'arlon';
+    color: #212020;
+    text-align: left;
+}
+
+.nav-sidebar .menu-open>.nav-link i.right {
+    -webkit-transform: rotate(
+-90deg
+);
+    transform: rotate(
+-90deg
+);
+}
+
+.nav-sidebar .top-item>.nav-link .right {
+    transition: -webkit-transform ease-in-out .3s;
+    transition: transform ease-in-out .3s;
+    transition: transform ease-in-out .3s,-webkit-transform ease-in-out .3s;
+}
+
+.nav-sidebar .nav-link>.right, .nav-sidebar .nav-link>p>.right {
+    position: absolute;
+    right: 1rem;
+    top: .7rem;
+}
