@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Feedback</h1>
+            <h1>Visitor Daily</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -24,20 +24,18 @@
                   <thead>
                     <tr>
                       <th>No.</th>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Phone</th>
-                      <th>Voucher</th>
+                      <th>Last IP</th>
+                      <th>Date</th>
+                      <th>Hits</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php $i=0; foreach ($list as $rows) : $i++; ?>
                     <tr>
                       <td><?php echo $i; ?></td>
-                      <td><?php echo $rows->fb_name; ?></td>
-                      <td><?php echo $rows->fb_email; ?></td>
-                      <td><?php echo $rows->fb_phone; ?></td>
-                      <td><?php echo $rows->fb_voucher; ?></td>
+                      <td><?php echo $rows->vd_ip; ?></td>
+                      <td><?php echo date('d M Y H:i', strtotime($rows->vd_date)); ?></td>
+                      <td><?php echo $rows->vd_hit; ?></td>
                     </tr>
                     <?php endforeach; ?>
                   </tbody>

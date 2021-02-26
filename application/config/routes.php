@@ -29,17 +29,25 @@ $route['games/play'] = 'frontend/games/play';
 $route['games/success'] = 'frontend/games/success';
 $route['games/failed'] = 'frontend/games/failed';
 
+//Feedback
+$route['feedback/form'] = 'frontend/feedback/feedback_form';
+$route['feedback/save'] = 'frontend/feedback/feedback_save';
+$route['feedback/results'] = 'frontend/feedback/feedback_results';
+$route['feedback/share'] = 'frontend/feedback/feedback_share';
+$route['feedback/share/results'] = 'frontend/feedback/feedback_share_results';
+
 
 //================================================================================backend
 $route['dashboard/logout'] = 'backend/dashboard/logout';
 $route['dashboard'] = 'backend/dashboard/dashboard';
+$route['voucher'] = 'backend/voucher/main';
 $route['feedback'] = 'backend/feedback/main';
 $route['game'] = 'backend/game/main';
 $route['visitor-buy'] = 'backend/visitorbuy/main';
 $route['visitor-daily'] = 'backend/visitordaily/main';
 $route['visitor-daily-history'] = 'backend/visitordaily/history';
-$route['visitor-event-live'] = 'backend/visitorbuy/main';
-$route['visitor-product'] = 'backend/visitorbuy/main';
+$route['visitor-event-live'] = 'backend/visitoreventlive/main';
+$route['visitor-product'] = 'backend/visitorproduct/main';
 
 //sample code
 $route['reqip'] = 'backend/dashboard/reqip';

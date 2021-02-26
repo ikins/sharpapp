@@ -53,6 +53,31 @@ function update_visitor_daily_post($vd_id, $data)
 		$this->db->where('vd_id', $vd_id);
 		$this->db->update('visitor_daily', $data);				
 	}
-			
+
+//list
+function daily_list()
+	{	
+
+		$q = $this->db->select('a.*')
+				
+		->from('visitor_daily a');			
+					
+		$result = $q->get()->result();
+		return $result;
+
+	}
+
+//list
+function daily_history()
+	{	
+
+		$q = $this->db->select('a.*')
+				
+		->from('visitor_daily_history a');			
+					
+		$result = $q->get()->result();
+		return $result;
+
+	}		
 
 }

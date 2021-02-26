@@ -35,6 +35,16 @@
       "responsive": true,
     });
 
+    $('#tabledashboard').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+
     Highcharts.chart('product_category', {
 	    chart: {
 	        plotBackgroundColor: null,

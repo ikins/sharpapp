@@ -13,4 +13,5 @@
   <!-- Main style -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
 </head>
-<body class="hold-transition">
+<body class="hold-transition layout-top-nav">
+  <div class="wrapper">

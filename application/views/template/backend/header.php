@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/adminlte.min.css">
   <!-- Main style -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
+  <!-- Util style -->
+  <link rel="stylesheet" href="<?= base_url(); ?>assets/css/util.css">
 
 </head>
 <body class="hold-transition sidebar-mini skin-black-light sidebar-collapse text-sm">

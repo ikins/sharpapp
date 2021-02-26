@@ -13,6 +13,9 @@ class Visitordaily extends CI_Controller {
 		
 		//User Login
 		$this->is_user_sharp();
+
+		//model
+		$this->load->model('daily_model');
 	}
 
 	//login
@@ -30,15 +33,17 @@ class Visitordaily extends CI_Controller {
 	{
 		//dashboard
 		$data['title'] = $this->title;
-		$data['main_content'] = 'backend/'.$this->ctrl.'/main';
+		$data['main_content'] = 'backend/'.$this->ctrl.'/daily/main';
+		$data['list'] = $this->daily_model->daily_list();
 		$this->load->view('template/backend/view', $data);
 	}
 
 	public function history()
 	{
 		//dashboard
-		$data['title'] = $this->title;
-		$data['main_content'] = 'backend/'.$this->ctrl.'/main';
+		$data['title'] = $this->title."History";
+		$data['main_content'] = 'backend/'.$this->ctrl.'/daily/history';
+		$data['history'] = $this->daily_model->daily_history();
 		$this->load->view('template/backend/view', $data);
 	}
 }

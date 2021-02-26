@@ -365,3 +365,22 @@ li.top-item {
     right: 1rem;
     top: .7rem;
 }
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0.85em;
+    white-space: nowrap;
+    padding-left: 10px;
+}
+
+div.dataTables_wrapper div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+    padding-right: 10px;
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 10px;
+}
