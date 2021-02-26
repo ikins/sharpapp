@@ -58,6 +58,9 @@
     <div class="kuula" style="display: none;">
     
         <script src="https://static.kuula.io/embed.js" data-kuula="https://kuula.co/share/collection/7YlPH?fs=0&vr=1&zoom=1&sd=1&thumbs=-1&inst=0&info=0&logo=-1" data-css="ku-embed"></script>
+        <audio id="audio-bg" autoplay loop>
+            <source src="<?= base_url(); ?>assets/bg_music.mp3">
+        </audio>
         <nav class="navbar nav-justified fixed-bottom navbar-expand-lg navbar-light bg-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -95,6 +98,7 @@
                 </ul>
             </div>
         </nav>
+        
     </div>
 
 
@@ -114,6 +118,8 @@
     $(document).ready(function() {
         var ctrlVideo = document.getElementById("welcomevideo");
         var audio = document.getElementById("audio-intro");
+        var x = document.getElementById("audio-bg"); 
+        x.pause();
         document.getElementById('welcomevideo').addEventListener('ended', myHandler, false);
         $('button').click(function() {
             $("#welcomevideo").show();
@@ -127,6 +133,7 @@
             $("#welcomevideo").hide();
             $(".kuula").show();
             $("#menu").show();
+            x.play();
         }
 
     });
@@ -140,10 +147,8 @@
           $("#modalfeedback").modal('show');
           
         });
-    var x = document.getElementById("audio-intro"); 
-    
 
-
+    var x = document.getElementById("audio-bg"); 
     $("#on_bt").on("click",function(){
       $("#on_bt").hide();
       $("#off_bt").show();
@@ -155,6 +160,86 @@
       $("#on_bt").show();
       x.muted = false;
     });
+    
+
+    // kuula
+    KuulaPlayerAPI.addEventListener("frameloaded", function(e) {
+    var x = document.getElementById("audio-bg"); 
+        document.querySelector("#audio").addEventListener("click", function() {
+            KuulaPlayerAPI.setHeading(e.frame, 100);
+            KuulaPlayerAPI.setZoom(e.frame, -15);
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
+        });
+
+        document.querySelector("#ref").addEventListener("click", function() {
+            KuulaPlayerAPI.setHeading(e.frame, 135);
+            KuulaPlayerAPI.setZoom(e.frame, -15);
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
+        });
+
+        document.querySelector("#was").addEventListener("click", function() {
+            KuulaPlayerAPI.setHeading(e.frame, 165);
+            KuulaPlayerAPI.setZoom(e.frame, -15);
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
+        });
+
+        document.querySelector("#ac").addEventListener("click", function() {
+            KuulaPlayerAPI.setHeading(e.frame, 195);
+            KuulaPlayerAPI.setZoom(e.frame, -15);
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
+        });
+
+        document.querySelector("#ha").addEventListener("click", function() {
+            KuulaPlayerAPI.setHeading(e.frame, 225);
+            KuulaPlayerAPI.setZoom(e.frame, -15);
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
+        });
+
+        document.querySelector("#sl").addEventListener("click", function() {
+            KuulaPlayerAPI.setHeading(e.frame, 255);
+            KuulaPlayerAPI.setZoom(e.frame, -15);
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
+        });
+
+        document.querySelector("#stage").addEventListener("click", function() {
+            KuulaPlayerAPI.setHeading(e.frame, 0);
+            KuulaPlayerAPI.setZoom(e.frame, 0);
+            $("#on_bt").show();
+            $("#off_bt").hide();
+            x.muted = false;
+        });
+
+        document.querySelector("#games").addEventListener("click", function() {
+            KuulaPlayerAPI.setHeading(e.frame, -60);
+            KuulaPlayerAPI.setZoom(e.frame, -5);
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
+        });
+
+        document.querySelector("#photo").addEventListener("click", function() {
+            KuulaPlayerAPI.setHeading(e.frame, 60);
+            KuulaPlayerAPI.setZoom(e.frame, -5);
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
+        });
+
+
+    });
+
 </script>
 </body>
 </html>
