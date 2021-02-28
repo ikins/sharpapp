@@ -184,16 +184,11 @@ img.icononframe {
     height: 100vh;
 }
 
-#shop .btn-shop {
-    position: absolute;
+#shop {
+    position: fixed;
+    bottom: 25px;
+    right: 60px;
     z-index: 100;
-    /* left: 57rem;
-    top: 27.5rem; */
-    /* on modal */
-    left: 34.5rem;
-    top: 18.5rem;
-    /* on modal */
-    width: 200px;
 }
 
 img.buy-btn {
@@ -318,7 +313,9 @@ input[type="number"] {
     height: 100%;
 }
 
+
 /*Nav Admin*/
+
 .main-header .navbar-nav .nav-item .top-item {
     margin: 0;
 }
@@ -338,7 +335,7 @@ input[type="number"] {
     list-style: none;
 }
 
-.main-header .navbar-nav .nav-item .top-item{
+.main-header .navbar-nav .nav-item .top-item {
     margin: 0;
 }
 
@@ -357,21 +354,18 @@ li.top-item {
 }
 
 .nav-sidebar .menu-open>.nav-link i.right {
-    -webkit-transform: rotate(
--90deg
-);
-    transform: rotate(
--90deg
-);
+    -webkit-transform: rotate( -90deg);
+    transform: rotate( -90deg);
 }
 
 .nav-sidebar .top-item>.nav-link .right {
     transition: -webkit-transform ease-in-out .3s;
     transition: transform ease-in-out .3s;
-    transition: transform ease-in-out .3s,-webkit-transform ease-in-out .3s;
+    transition: transform ease-in-out .3s, -webkit-transform ease-in-out .3s;
 }
 
-.nav-sidebar .nav-link>.right, .nav-sidebar .nav-link>p>.right {
+.nav-sidebar .nav-link>.right,
+.nav-sidebar .nav-link>p>.right {
     position: absolute;
     right: 1rem;
     top: .7rem;

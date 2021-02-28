@@ -19,7 +19,7 @@
             </div>
             <div class="arc-reactor-core">
                 <audio id="audio-intro" autoplay loop>
-                    <source src="<?= base_url(); ?>assets/intro.mp3">
+                    <source src="<?= base_url(); ?>assets/intro.wav">
                 </audio>
                 <button id="play-welcome" class="active"></button>
             </div>
@@ -99,7 +99,7 @@
             </div>
         </nav>
         
-    </div>
+    </div> 
 
 
     <div class="modal fade" id="modalfeedback" tabindex="-1" role="dialog" aria-hidden="true">
@@ -162,55 +162,55 @@
     });
     
 
-    // kuula
+    // kuula load frame
     KuulaPlayerAPI.addEventListener("frameloaded", function(e) {
     var x = document.getElementById("audio-bg"); 
         document.querySelector("#audio").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 100);
             KuulaPlayerAPI.setZoom(e.frame, -15);
-            $("#on_bt").hide();
-            $("#off_bt").show();
-            x.muted = true;
+            $("#on_bt").show();
+            $("#off_bt").hide();
+            x.muted = false;
         });
 
         document.querySelector("#ref").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 135);
             KuulaPlayerAPI.setZoom(e.frame, -15);
-            $("#on_bt").hide();
-            $("#off_bt").show();
-            x.muted = true;
+            $("#on_bt").show();
+            $("#off_bt").hide();
+            x.muted = false;
         });
 
         document.querySelector("#was").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 165);
             KuulaPlayerAPI.setZoom(e.frame, -15);
-            $("#on_bt").hide();
-            $("#off_bt").show();
-            x.muted = true;
+            $("#on_bt").show();
+            $("#off_bt").hide();
+            x.muted = false;
         });
 
         document.querySelector("#ac").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 195);
             KuulaPlayerAPI.setZoom(e.frame, -15);
-            $("#on_bt").hide();
-            $("#off_bt").show();
-            x.muted = true;
+            $("#on_bt").show();
+            $("#off_bt").hide();
+            x.muted = false;
         });
 
         document.querySelector("#ha").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 225);
             KuulaPlayerAPI.setZoom(e.frame, -15);
-            $("#on_bt").hide();
-            $("#off_bt").show();
-            x.muted = true;
+            $("#on_bt").show();
+            $("#off_bt").hide();
+            x.muted = false;
         });
 
         document.querySelector("#sl").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 255);
             KuulaPlayerAPI.setZoom(e.frame, -15);
-            $("#on_bt").hide();
-            $("#off_bt").show();
-            x.muted = true;
+            $("#on_bt").show();
+            $("#off_bt").hide();
+            x.muted = false;
         });
 
         document.querySelector("#stage").addEventListener("click", function() {
@@ -224,19 +224,29 @@
         document.querySelector("#games").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, -60);
             KuulaPlayerAPI.setZoom(e.frame, -5);
-            $("#on_bt").hide();
-            $("#off_bt").show();
-            x.muted = true;
+            $("#on_bt").show();
+            $("#off_bt").hide();
+            x.muted = false;
         });
 
         document.querySelector("#photo").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 60);
             KuulaPlayerAPI.setZoom(e.frame, -5);
-            $("#on_bt").hide();
-            $("#off_bt").show();
-            x.muted = true;
+            $("#on_bt").show();
+            $("#off_bt").hide();
+            x.muted = false;
         });
 
+
+    });
+
+
+    // kuula hotspot event
+    KuulaPlayerAPI.addEventListener("hotspot", function(e)  {
+        var x = document.getElementById("audio-bg"); 
+        $("#on_bt").hide();
+        $("#off_bt").show();
+        x.muted = true;
 
     });
 
