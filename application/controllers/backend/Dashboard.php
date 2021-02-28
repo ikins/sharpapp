@@ -16,6 +16,10 @@ class Dashboard extends CI_Controller {
 		//User Login
 		$this->is_user_sharp();
 
+		//model
+		$this->load->model('product_model');
+		$this->load->model('daily_model');
+
 	}
 
 	//login
@@ -38,10 +42,16 @@ class Dashboard extends CI_Controller {
 	}
 
 	public function dashboard()
-	{
+	{	
+		$date = date('Y-m-d');
+		$data['today'] = $date;
 		//dashboard
 		$data['title'] = $this->title;
 		$data['main_content'] = 'backend/'.$this->ctrl.'/main';
+		$list = $this->product_model->product_list_graph($date);
+		//print_r(json_encode($list));
+		$data['list'] = json_encode($list);
+		$data['history'] = $this->daily_model->daily_history();
 		$this->load->view('template/backend/view', $data);
 	}	
 

@@ -286,24 +286,30 @@ input[type="number"] {
 
 /* gamse */
 
-.games-register {
-    background-image: url("../../assets/images/games/register.jpg");
+.bg-pop {
+    background-image: url("../../assets/images/bg.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
 }
 
-.games-play {
-    background-image: url("../../assets/images/games/play.jpg");
-    background-position: center;
+.bg-register-form {
+    background-image: url("../../assets/images/games/bg-form-register.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
+    background-size: 453px 263px;
 }
+
+.bg-play-game {
+    background-image: url("../../assets/images/games/bg-play-game.png");
+    background-repeat: no-repeat;
+    background-size: 400px 430px;
+}
+
+
 
 .games-success {
-    background-image: url("../../assets/images/games/success.jpg");
+    background-image: url("../../assets/images/bg.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -311,11 +317,68 @@ input[type="number"] {
 }
 
 .games-failed {
-    background-image: url("../../assets/images/games/failed.jpg");
+    background-image: url("../../assets/images/bg.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+}
+
+.set-padding-top{
+    padding-top: 150px;
+}
+
+.set-padding {
+    padding: 40px;
+}
+
+.set-margin-button {
+    margin-top: -50px;
+    margin-right: 20px;
+}
+
+.set-play-top{
+    padding-top: 30px;
+}
+
+.set-play-padding {
+    padding-top: 40px;
+}
+
+.set-success-top, .set-failed-top{
+    padding-top: 140px;
+}
+
+.set-success-button{
+    margin-top: -70px;
+}
+
+.set-failed-button{
+    margin-top: -90px;
+}
+
+/* Feddback */
+.set-feedback-form-top{
+    padding-top: 160px;
+}
+
+.set-top-form{
+    margin-top: -90px;
+}
+
+.set-question-top{
+    padding-top: 120px;
+}
+
+.bg-question-form{
+    background-image: url("../../assets/images/feedback/bg-question.png");
+    background-repeat: no-repeat;
+    background-size: 740px 300px;
+}
+
+.title-question{
+    font-size: 18px;
+    color: #fff;
 }
 
 /*Nav Admin*/
@@ -394,4 +457,30 @@ div.dataTables_wrapper div.dataTables_filter {
     text-align: right;
     padding-top: 10px;
     padding-right: 10px;
+}
+
+
+/* ==========================================================================
+   MEDIA
+   ========================================================================== */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 980px;
+    }
+}
+
+@media (max-width: 576px) {
+    .set-padding {
+        padding: 0px;
+    }   
+
+    .set-padding-top{
+        padding-top: 100px;
+    }
+
+    .bg-register-form {
+        background-image: url("../../assets/images/games/bg-form-register.png");
+        background-repeat: no-repeat;
+        background-size: 453px 263px;
+    }
 }

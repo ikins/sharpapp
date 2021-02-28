@@ -25,6 +25,7 @@ $route['visit-buy'] = 'frontend/visitor/visit_buy';
 
 //Games
 $route['games/register'] = 'frontend/games/register';
+$route['games/save'] = 'frontend/games/save';
 $route['games/play'] = 'frontend/games/play';
 $route['games/success'] = 'frontend/games/success';
 $route['games/failed'] = 'frontend/games/failed';
@@ -35,19 +36,31 @@ $route['feedback/save'] = 'frontend/feedback/feedback_save';
 $route['feedback/results'] = 'frontend/feedback/feedback_results';
 $route['feedback/share'] = 'frontend/feedback/feedback_share';
 $route['feedback/share/results'] = 'frontend/feedback/feedback_share_results';
+$route['feedback/question-1'] = 'frontend/feedback/feedback_q1';
+$route['feedback/question-2'] = 'frontend/feedback/feedback_q2';
+$route['feedback/question-3'] = 'frontend/feedback/feedback_q3';
+$route['feedback/question-4'] = 'frontend/feedback/feedback_q4';
+$route['feedback/question-5'] = 'frontend/feedback/feedback_q5';
+$route['feedback/question-6'] = 'frontend/feedback/feedback_q6';
+
+//Photobooth
+$route['photobooth/screen'] = 'frontend/photobooth/photobooth_screen';
 
 
 //================================================================================backend
 $route['dashboard/logout'] = 'backend/dashboard/logout';
 $route['dashboard'] = 'backend/dashboard/dashboard';
-$route['voucher'] = 'backend/voucher/main';
-$route['feedback'] = 'backend/feedback/main';
-$route['game'] = 'backend/game/main';
-$route['visitor-buy'] = 'backend/visitorbuy/main';
-$route['visitor-daily'] = 'backend/visitordaily/main';
-$route['visitor-daily-history'] = 'backend/visitordaily/history';
-$route['visitor-event-live'] = 'backend/visitoreventlive/main';
-$route['visitor-product'] = 'backend/visitorproduct/main';
+$route['dashboard/voucher'] = 'backend/voucher/main';
+$route['dashboard/feedback'] = 'backend/feedback/main';
+$route['dashboard/game'] = 'backend/game/main';
+$route['dashboard/visitor-buy'] = 'backend/visitorbuy/main';
+$route['dashboard/visitor-daily'] = 'backend/visitordaily/main';
+$route['dashboard/visitor-daily-history'] = 'backend/visitordaily/history';
+$route['dashboard/visitor-event-live'] = 'backend/visitoreventlive/main';
+$route['dashboard/visitor-product'] = 'backend/visitorproduct/main';
+$route['dashboard/visitor-feedback'] = 'backend/visitorfeedback/main';
+$route['dashboard/visitor-game'] = 'backend/visitorgame/main';
+$route['dashboard/photobooth'] = 'backend/photobooth/main';
 
 //sample code
 $route['reqip'] = 'backend/dashboard/reqip';

@@ -7,12 +7,6 @@
           <div class="col-sm-6">
             <h1>Dashboard</h1>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard</li>
-            </ol>
-          </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -30,7 +24,6 @@
                 <span class="info-box-text">Daily Visitor</span>
                 <span class="info-box-number">
                   10
-                  <small>%</small>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -44,7 +37,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Product Visitor</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-number">41</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -61,7 +54,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Buy Now Shopee</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-number">7</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -77,14 +70,14 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                   <div class="inner">
-                    <h3>150</h3>
+                    <h3>10</h3>
 
                     <p>Feedback Form</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-bag"></i>
                   </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="<?= base_url(); ?>feedback" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <!-- ./col -->
@@ -92,14 +85,14 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                   <div class="inner">
-                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                    <h3>2</h3>
 
                     <p>Games Voucher</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-stats-bars"></i>
                   </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="<?= base_url(); ?>game" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
             </div>
@@ -108,14 +101,14 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                   <div class="inner">
-                    <h3>150</h3>
+                    <h3>5</h3>
 
                     <p>Feedback Visitor</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-bag"></i>
                   </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="<?= base_url(); ?>visitor-feedback" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <!-- ./col -->
@@ -123,14 +116,14 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                   <div class="inner">
-                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                    <h3>5</h3>
 
                     <p>Games Visitor</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-stats-bars"></i>
                   </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="<?= base_url(); ?>visitor-game" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
             </div>
@@ -139,14 +132,14 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                   <div class="inner">
-                    <h3>150</h3>
+                    <h3>8</h3>
 
                     <p>Stage</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-bag"></i>
                   </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="<?= base_url(); ?>visitor-event-live" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <!-- ./col -->
@@ -154,14 +147,14 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                   <div class="inner">
-                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                    <h3>53</h3>
 
-                    <p>Photobooth Visitor</p>
+                    <p>Photobooth</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-stats-bars"></i>
                   </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="<?= base_url(); ?>photobooth" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
             </div>
@@ -178,29 +171,41 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <h3 class="card-title">Daily Visitors History</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="dailyvisitor" class="table table-bordered table-striped">
                   <thead>
-                  <tr>
-                    <th>IP</th>
-                    <th>Browser</th>
-                    <th>Os</th>
-                    <th>Device</th>
-                    <th>Date</th>
-                  </tr>
+                    <tr>
+                      <th>No.</th>
+                      <th>Last IP</th>
+                      <th>Browser</th>
+                      <th>Operating System</th>
+                      <th>Device</th>
+                      <th>Date</th>
+                    </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>129.101.88.1</td>
-                    <td>Chrome
-                    </td>
-                    <td>Windows 10</td>
-                    <td>Desktop</td>
-                    <td>21 Feb 2021</td>
-                  </tr>
+                    <?php $i=0; foreach ($history as $rows) : $i++; ?>
+                    <?php switch ($rows->vh_device) {
+                      case '1':
+                        $device = 'Mobile';
+                        break;
+                      
+                      case '2':
+                        $device = 'Desktop';
+                        break;
+                    } ?>
+                    <tr>
+                      <td><?php echo $i; ?></td>
+                      <td><?php echo $rows->vh_ip; ?></td>
+                      <td><?php echo $rows->vh_browser; ?></td>
+                      <td><?php echo $rows->vh_os; ?></td>
+                      <td><?php echo $device; ?></td>
+                      <td><?php echo date('d M Y h:i', strtotime($rows->vh_time)); ?></td>
+                    </tr>
+                    <?php endforeach; ?>
                   </tbody>
                 </table>
               </div>
@@ -216,5 +221,68 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+  <script>
+  $(function () {
+    $('#dailyvisitor').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+
+    $('#tabledashboard').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+
+    Highcharts.chart('product_category', {
+      chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false,
+          type: 'pie'
+      },
+      title: {
+          text: 'Product Category Visitor'
+      },
+      tooltip: {
+          pointFormat: '{series.name}: <b>{point.y}</b>'
+      },
+      accessibility: {
+          point: {
+              valueSuffix: '%'
+          }
+      },
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: true,
+                  format: '<b>{point.name}</b>: {point.y}'
+              }
+          }
+      },
+      credits: {
+        enabled: false
+      },
+      series: [{
+          name: 'Product Category',
+          colorByPoint: true,
+          data: <?php print_r($list); ?>
+      }]
+  });
+
+  });
+</script>
 
   

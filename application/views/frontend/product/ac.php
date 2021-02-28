@@ -5,7 +5,7 @@
 <div id="shop" >
     <div class="row btn-shop">
         <div class="col-2 text-center offset-2 px-0">
-            <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=103810379" target="_new" type="button">
+            <a href="https://shopee.co.id/shop/76765337/search?page=0&shopCollection=103810379" target="_new" type="button" id="ac-buy">
                 <img class="buy-btn" src="<?= base_url(); ?>assets/images/buy.png">
             </a>
         </div>

@@ -21,4 +21,14 @@ function fb_list()
 
 	}
 
+function feedback_visitor_list()
+	{	
+		$q = $this->db->select('a.*')
+				
+		->from('visitor_feedback a');			
+					
+		$result = $q->get()->result();
+		return $result;
+	}
+
 }

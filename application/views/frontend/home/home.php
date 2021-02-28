@@ -11,7 +11,7 @@
     
     <script src="https://static.kuula.io/api.js"></script>
 </head>
-<body>
+<body class="layout-top-nav">
     <!-- welcome -->
     <div class="arc-container" id="bg_video">
         <div class="arc-reactor">
@@ -38,7 +38,7 @@
     <div id="menu" style="display: none;">
         <div class="row menu-link">
             <div class="col-md-2  col-2 text-center  px-0">
-                <a type="button" class="menu_link" modal-url="<?php echo base_url('welcome/feedback') ?>" modal-title="Mekanisme">
+                <a type="button" class="menu_link" modal-url="<?php echo base_url() ?>feedback/form" modal-title="Mekanisme">
                     <img class="icononframe" src="<?= base_url(); ?>assets/images/feedback-icon.png">
                 </a>
             </div>
@@ -111,6 +111,9 @@
             </div>
         </div>
     </div>
+    <!-- base_url -->
+    <input type="hidden" id="url" value="<?php echo base_url();?>">
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url(); ?>/assets/js/function.js"></script>
@@ -135,7 +138,6 @@
             $("#menu").show();
             x.play();
         }
-
     });
 </script>
 <script>
@@ -237,7 +239,83 @@
             x.muted = true;
         });
 
+        //product category 27022021
 
+
+    });
+
+    //
+    var base_url = $("#url").val();
+    //
+    KuulaPlayerAPI.addEventListener("hotspot", function(e){
+        // console.log("Frame id:          " + e.frame);
+        // console.log("Hotspot unique id: " + e.data.uid);
+        // console.log("Hotspot name:      " + e.data.name);
+
+        var name_product_category = e.data.name;
+        if(name_product_category == 'vp_audio'){
+            //alert('Audio');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'1' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_ref'){
+            // alert('Ref');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'2' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_wm'){
+            // alert('WM');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'3' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_ac'){
+            // alert('AC');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'4' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_sh'){
+            // alert('SH');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'5' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_sl'){
+            // alert('SL');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'6' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }
+
+        
     });
 
 </script>

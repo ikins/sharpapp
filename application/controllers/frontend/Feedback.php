@@ -26,6 +26,48 @@ class Feedback extends CI_Controller {
 		$this->load->view('template/frontend/view', $data);
 	}
 
+	public function feedback_q1()
+	{
+		$data['title'] = 'Feedback Question 1';						
+		$data['main_content'] = 'frontend/feedback/question-1';
+		$this->load->view('template/frontend/view', $data);
+	}
+
+	public function feedback_q2()
+	{
+		$data['title'] = 'Feedback Question 2';						
+		$data['main_content'] = 'frontend/feedback/question-2';
+		$this->load->view('template/frontend/view', $data);
+	}
+
+	public function feedback_q3()
+	{
+		$data['title'] = 'Feedback Question 3';						
+		$data['main_content'] = 'frontend/feedback/question-3';
+		$this->load->view('template/frontend/view', $data);
+	}
+
+	public function feedback_q4()
+	{
+		$data['title'] = 'Feedback Question 4';						
+		$data['main_content'] = 'frontend/feedback/question-4';
+		$this->load->view('template/frontend/view', $data);
+	}
+
+	public function feedback_q5()
+	{
+		$data['title'] = 'Feedback Question 5';						
+		$data['main_content'] = 'frontend/feedback/question-5';
+		$this->load->view('template/frontend/view', $data);
+	}
+
+	public function feedback_q6()
+	{
+		$data['title'] = 'Feedback Question 6';						
+		$data['main_content'] = 'frontend/feedback/question-6';
+		$this->load->view('template/frontend/view', $data);
+	}
+
 	public function feedback_save()
 	{
 		$fb_name = $this->input->post('name');

@@ -1,4 +1,6 @@
 	</div>
+  <!-- base_url -->
+  <input type="hidden" id="url" value="<?php echo base_url();?>">
 <!-- jQuery -->
 <script src="<?= base_url(); ?>assets/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -25,6 +27,77 @@
     });
   }, false);
 })();
+</script>
+
+<script type="text/javascript">
+  //
+    var base_url = $("#url").val();
+  //
+  $('#audio-buy').click(function(){
+        $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-buy',
+               data: { category:+'1' },
+               beforeSend: function() {},
+               success: function(msg){}
+        });
+  });
+
+  $('#ref-buy').click(function(){
+        $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-buy',
+               data: { category:+'2' },
+               beforeSend: function() {},
+               success: function(msg){}
+        });
+    });
+
+    $('#wm-buy').click(function(){
+        $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-buy',
+               data: { category:+'3' },
+               beforeSend: function() {},
+               success: function(msg){}
+        });
+    });
+
+    $('#ac-buy').click(function(){
+        $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-buy',
+               data: { category:+'4' },
+               beforeSend: function() {},
+               success: function(msg){}
+        });
+    });
+
+    $('#sh-buy').click(function(){
+        $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-buy',
+               data: { category:+'5' },
+               beforeSend: function() {},
+               success: function(msg){}
+        });
+    });
+
+    $('#sl-buy').click(function(){
+        $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-buy',
+               data: { category:+'6' },
+               beforeSend: function() {},
+               success: function(msg){}
+        });
+    });
 </script>
 
 </body>

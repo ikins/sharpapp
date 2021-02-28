@@ -21,4 +21,14 @@ function g_list()
 
 	}
 
+function game_visitor_list()
+	{	
+		$q = $this->db->select('a.*')
+				
+		->from('visitor_game a');			
+					
+		$result = $q->get()->result();
+		return $result;
+	}
+
 }

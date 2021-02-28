@@ -29,6 +29,7 @@ class Visitor extends CI_Controller {
 		$data = array(
 
 			'vp_ip' 	=> $ip,
+			'vp_date'	=> $date,
 			'vp_product_category' 	=> $vp_product_category,
 
 		);
@@ -44,6 +45,7 @@ class Visitor extends CI_Controller {
 		$data = array(
 
 			'vb_ip' 	=> $ip,
+			'vb_date'	=> $date,
 			'vb_product_category' 	=> $vb_product_category,
 
 		);
