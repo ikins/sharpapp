@@ -11,8 +11,14 @@ class Game extends CI_Controller {
 	{
 		parent::__construct();
 
+		//Session
+		$this->load->library('session');
+		
 		//User Login
 		$this->is_user_sharp();
+
+		//model
+		$this->load->model('games_model');
 	}
 
 	//login
@@ -31,6 +37,7 @@ class Game extends CI_Controller {
 		//dashboard
 		$data['title'] = $this->title;
 		$data['main_content'] = 'backend/'.$this->ctrl.'/main';
+		$data['list'] = $this->games_model->g_list();
 		$this->load->view('template/backend/view', $data);
 	}
 }

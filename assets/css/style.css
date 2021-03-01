@@ -196,6 +196,46 @@ img.buy-btn {
 }
 
 
+/* new games */
+
+.bg-games {
+    position: fixed;
+    background-image: url('../images/bg.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.content-games {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.btn-danger {
+    color: #d26b6f;
+    background-color: #f7c7c7;
+    border-color: #f7c7c7;
+    box-shadow: none;
+    border-radius: 0 !important;
+}
+
+.btn-danger:hover {
+    color: #f7c7c7;
+    background-color: #d26b6f;
+    border-color: #f7c7c7;
+    box-shadow: none;
+    border-radius: 0 !important;
+}
+
+::placeholder {
+    text-transform: uppercase;
+    color: #ef4951 !important;
+}
+
+
 /* Ikin 20210123*/
 
 
@@ -281,24 +321,38 @@ input[type="number"] {
 
 /* gamse */
 
-.games-register {
-    background-image: url("../../assets/images/games/register.jpg");
-    background-position: center;
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 25px 70px 20px 20px;
+}
+
+.bg-pop {
+    position: fixed;
+    background-image: url('../images/bg.png');
+    background-attachment: fixed;
     background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
+    width: 100%;
     height: 100%;
 }
 
-.games-play {
-    background-image: url("../../assets/images/games/play.jpg");
-    background-position: center;
+.bg-register-form {
+    background-image: url("../../assets/images/games/bg-form-register.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
+    background-size: 250px 200px;
+}
+
+.bg-play-game {
+    background-image: url("../../assets/images/games/bg-play-game.png");
+    background-repeat: no-repeat;
+    background-size: 400px 430px;
 }
 
 .games-success {
-    background-image: url("../../assets/images/games/success.jpg");
+    background-image: url("../../assets/images/bg.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -306,13 +360,131 @@ input[type="number"] {
 }
 
 .games-failed {
-    background-image: url("../../assets/images/games/failed.jpg");
+    background-image: url("../../assets/images/bg.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
 }
 
+.set-padding-top {
+    padding-top: 150px;
+}
+
+.set-padding {
+    padding: 40px;
+}
+
+.set-margin-button {
+    margin-top: -40px;
+    margin-right: 55px;
+}
+
+.set-play-top {
+    padding-top: 30px;
+}
+
+.set-play-padding {
+    padding-top: 40px;
+}
+
+.set-success-top,
+.set-failed-top {
+    padding-top: 110px;
+}
+
+.set-success-button {
+    margin-top: -70px;
+}
+
+.set-failed-button {
+    margin-top: -90px;
+}
+
+
+/* Feddback */
+
+.bg-feedback {
+    position: fixed;
+    background-image: url('../images/bg.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.content-feedback{
+    margin-left: 120px;
+    margin-right: 80px;
+}
+
+.set-feedback-form-top {
+    padding-top: 20px;
+}
+
+.set-top-form {
+    margin-top: -90px;
+}
+
+.set-question-top {
+    padding-top: 50px;
+}
+
+.set-margin-button-feedback{
+    margin-top: -40px;
+    margin-right: 40px;
+}
+
+.bg-question-form {
+    background-image: url("../../assets/images/feedback/bg-question.png");
+    background-repeat: no-repeat;
+    background-size: 500px 250px;
+}
+
+.bg-thanks{
+    background-image: url("../../assets/images/feedback/thanks.png");
+    background-repeat: no-repeat;
+    background-size: 500px 250px;
+}
+
+.card-feedback {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 25px;
+}
+
+.label-feedback{
+    font-size: 16px;
+    color: #fff; 
+    text-transform: uppercase;
+}
+
+.label-feedback-product{
+    font-size: 12px;
+    color: #fff; 
+    text-transform: uppercase;
+}
+
+.title-question {
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.btn-feedback{
+    margin-top: -20px;
+}
+
+.btn-feedback-note{
+    margin-top: -50px;
+}
+
+.btn-feedback-thanks{
+    margin-top: -50px;
+}
 
 /*Nav Admin*/
 
@@ -369,4 +541,48 @@ li.top-item {
     position: absolute;
     right: 1rem;
     top: .7rem;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0.85em;
+    white-space: nowrap;
+    padding-left: 10px;
+}
+
+div.dataTables_wrapper div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+    padding-right: 10px;
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+
+/* ==========================================================================
+   MEDIA
+   ========================================================================== */
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 980px;
+    }
+}
+
+@media (max-width: 576px) {
+    .set-padding {
+        padding: 0px;
+    }
+    .set-padding-top {
+        padding-top: 100px;
+    }
+    .bg-register-form {
+        background-image: url("../../assets/images/games/bg-form-register.png");
+        background-repeat: no-repeat;
+        background-size: 453px 263px;
+    }
 }

@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title;?></title>
+    <link rel="icon" href="<?= base_url(); ?>assets/images/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/ring.css">
     
     <script src="https://static.kuula.io/api.js"></script>
 </head>
-<body>
+<body class="layout-top-nav">
     <!-- welcome -->
     <div class="arc-container" id="bg_video">
         <div class="arc-reactor">
@@ -19,7 +20,7 @@
             </div>
             <div class="arc-reactor-core">
                 <audio id="audio-intro" autoplay loop>
-                    <source src="<?= base_url(); ?>assets/intro.wav">
+                    <source src="<?= base_url(); ?>assets/intro.mp3">
                 </audio>
                 <button id="play-welcome" class="active"></button>
             </div>
@@ -38,7 +39,7 @@
     <div id="menu" style="display: none;">
         <div class="row menu-link">
             <div class="col-md-2  col-2 text-center  px-0">
-                <a type="button" class="menu_link" modal-url="<?php echo base_url('welcome/feedback') ?>" modal-title="Mekanisme">
+                <a type="button" class="menu_link" data-toggle="modal" data-target="#feedbackModal" modal-title="Feedback">
                     <img class="icononframe" src="<?= base_url(); ?>assets/images/feedback-icon.png">
                 </a>
             </div>
@@ -99,18 +100,22 @@
             </div>
         </nav>
         
-    </div> 
+    </div>
 
 
-    <div class="modal fade" id="modalfeedback" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog  modal-lg" role="document">
-            <div class="modal-content" >
-                <div class="modal-body p-0" >
-                    
-                </div>
+    <!-- Modal -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="embed-responsive embed-responsive-16by9">
+               <iframe class="embed-responsive-item" src="<?php echo base_url();?>feedback/form" allowfullscreen></iframe>
             </div>
         </div>
+      </div>
     </div>
+    <!-- base_url -->
+    <input type="hidden" id="url" value="<?php echo base_url();?>">
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url(); ?>/assets/js/function.js"></script>
@@ -135,7 +140,6 @@
             $("#menu").show();
             x.play();
         }
-
     });
 </script>
 <script>
@@ -162,7 +166,7 @@
     });
     
 
-    // kuula load frame
+    // kuula
     KuulaPlayerAPI.addEventListener("frameloaded", function(e) {
     var x = document.getElementById("audio-bg"); 
         document.querySelector("#audio").addEventListener("click", function() {
@@ -237,17 +241,87 @@
             x.muted = false;
         });
 
+        //product category 27022021
+
 
     });
 
-
-    // kuula hotspot event
-    KuulaPlayerAPI.addEventListener("hotspot", function(e)  {
+    //
+    var base_url = $("#url").val();
+    //
+    KuulaPlayerAPI.addEventListener("hotspot", function(e){
+        // console.log("Frame id:          " + e.frame);
+        // console.log("Hotspot unique id: " + e.data.uid);
+        // console.log("Hotspot name:      " + e.data.name);
         var x = document.getElementById("audio-bg"); 
         $("#on_bt").hide();
         $("#off_bt").show();
         x.muted = true;
+        
+        var name_product_category = e.data.name;
+        if(name_product_category == 'vp_audio'){
+            //alert('Audio');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'1' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_ref'){
+            // alert('Ref');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'2' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_wm'){
+            // alert('WM');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'3' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_ac'){
+            // alert('AC');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'4' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_sh'){
+            // alert('SH');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'5' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_sl'){
+            // alert('SL');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'6' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }
 
+        
     });
 
 </script>

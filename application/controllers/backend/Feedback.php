@@ -11,8 +11,14 @@ class Feedback extends CI_Controller {
 	{
 		parent::__construct();
 
+		//Session
+		$this->load->library('session');
+		
 		//User Login
 		$this->is_user_sharp();
+
+		//model
+		$this->load->model('feedback_model');
 	}
 
 	//login
@@ -31,6 +37,7 @@ class Feedback extends CI_Controller {
 		//dashboard
 		$data['title'] = $this->title;
 		$data['main_content'] = 'backend/'.$this->ctrl.'/main';
+		$data['list'] = $this->feedback_model->fb_list();
 		$this->load->view('template/backend/view', $data);
 	}
 }
