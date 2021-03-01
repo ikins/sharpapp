@@ -5,6 +5,21 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'tomkin';
+    src: url('../font/Tomkin-Regular.woff2') format('woff2'), url('assets/font/Tomkin-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.form-group {
+    font-family: 'tomkin' !important;
+}
+
+button.btn.btn-danger {
+    font-family: 'tomkin' !important;
+}
+
 #welcomevideo {
     position: fixed;
     top: 0;
