@@ -32,16 +32,21 @@ $route['games/failed'] = 'frontend/games/failed';
 
 //Feedback
 $route['feedback/form'] = 'frontend/feedback/feedback_form';
-$route['feedback/save'] = 'frontend/feedback/feedback_save';
-$route['feedback/results'] = 'frontend/feedback/feedback_results';
-$route['feedback/share'] = 'frontend/feedback/feedback_share';
-$route['feedback/share/results'] = 'frontend/feedback/feedback_share_results';
 $route['feedback/question-1'] = 'frontend/feedback/feedback_q1';
 $route['feedback/question-2'] = 'frontend/feedback/feedback_q2';
 $route['feedback/question-3'] = 'frontend/feedback/feedback_q3';
 $route['feedback/question-4'] = 'frontend/feedback/feedback_q4';
 $route['feedback/question-5'] = 'frontend/feedback/feedback_q5';
 $route['feedback/question-6'] = 'frontend/feedback/feedback_q6';
+$route['feedback/question-7'] = 'frontend/feedback/feedback_q7';
+$route['feedback/question-8'] = 'frontend/feedback/feedback_q8';
+$route['feedback/question-9'] = 'frontend/feedback/feedback_q9';
+$route['feedback/save'] = 'frontend/feedback/feedback_save';
+$route['feedback/results'] = 'frontend/feedback/feedback_results';
+$route['feedback/share'] = 'frontend/feedback/feedback_share';
+$route['feedback/share/results'] = 'frontend/feedback/feedback_share_results';
+
+$route['feedback/sample'] = 'frontend/feedback/feedback_sample';
 
 //Photobooth
 $route['photobooth/screen'] = 'frontend/photobooth/photobooth_screen';

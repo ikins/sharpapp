@@ -30,6 +30,9 @@
 </script>
 
 <script type="text/javascript">
+   $('#feedback-close').click(function(){
+    $('#feedbackModal').modal('toggle');
+   });
   //
     var base_url = $("#url").val();
   //

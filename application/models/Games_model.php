@@ -31,4 +31,10 @@ function game_visitor_list()
 		return $result;
 	}
 
+function game_register($data)
+	{
+		$insert = $this->db->insert('game', $data);
+		return $insert;	
+	}
+
 }

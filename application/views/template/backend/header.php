@@ -14,7 +14,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/adminlte.min.css">
   <!-- Main style -->
-  <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
+  <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style-admin.css">
   <!-- Util style -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/util.css">
 

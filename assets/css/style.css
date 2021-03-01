@@ -184,20 +184,55 @@ img.icononframe {
     height: 100vh;
 }
 
-#shop .btn-shop {
-    position: absolute;
+#shop {
+    position: fixed;
+    bottom: 25px;
+    right: 60px;
     z-index: 100;
-    /* left: 57rem;
-    top: 27.5rem; */
-    /* on modal */
-    left: 34.5rem;
-    top: 18.5rem;
-    /* on modal */
-    width: 200px;
 }
 
 img.buy-btn {
     width: 200px !important;
+}
+
+
+/* new games */
+
+.bg-games {
+    position: fixed;
+    background-image: url('../images/bg.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.content-games {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.btn-danger {
+    color: #d26b6f;
+    background-color: #f7c7c7;
+    border-color: #f7c7c7;
+    box-shadow: none;
+    border-radius: 0 !important;
+}
+
+.btn-danger:hover {
+    color: #f7c7c7;
+    background-color: #d26b6f;
+    border-color: #f7c7c7;
+    box-shadow: none;
+    border-radius: 0 !important;
+}
+
+::placeholder {
+    text-transform: uppercase;
+    color: #ef4951 !important;
 }
 
 
@@ -286,18 +321,28 @@ input[type="number"] {
 
 /* gamse */
 
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 25px 70px 20px 20px;
+}
+
 .bg-pop {
-    background-image: url("../../assets/images/bg.png");
-    background-position: center;
+    position: fixed;
+    background-image: url('../images/bg.png');
+    background-attachment: fixed;
     background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
+    width: 100%;
     height: 100%;
 }
 
 .bg-register-form {
     background-image: url("../../assets/images/games/bg-form-register.png");
     background-repeat: no-repeat;
-    background-size: 453px 263px;
+    background-size: 250px 200px;
 }
 
 .bg-play-game {
@@ -305,8 +350,6 @@ input[type="number"] {
     background-repeat: no-repeat;
     background-size: 400px 430px;
 }
-
-
 
 .games-success {
     background-image: url("../../assets/images/bg.png");
@@ -324,7 +367,7 @@ input[type="number"] {
     height: 100%;
 }
 
-.set-padding-top{
+.set-padding-top {
     padding-top: 150px;
 }
 
@@ -333,11 +376,11 @@ input[type="number"] {
 }
 
 .set-margin-button {
-    margin-top: -50px;
-    margin-right: 20px;
+    margin-top: -40px;
+    margin-right: 55px;
 }
 
-.set-play-top{
+.set-play-top {
     padding-top: 30px;
 }
 
@@ -345,43 +388,106 @@ input[type="number"] {
     padding-top: 40px;
 }
 
-.set-success-top, .set-failed-top{
-    padding-top: 140px;
+.set-success-top,
+.set-failed-top {
+    padding-top: 110px;
 }
 
-.set-success-button{
+.set-success-button {
     margin-top: -70px;
 }
 
-.set-failed-button{
+.set-failed-button {
     margin-top: -90px;
 }
+
 
 /* Feddback */
-.set-feedback-form-top{
-    padding-top: 160px;
+
+.bg-feedback {
+    position: fixed;
+    background-image: url('../images/bg.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 }
 
-.set-top-form{
+.content-feedback{
+    margin-left: 120px;
+    margin-right: 80px;
+}
+
+.set-feedback-form-top {
+    padding-top: 20px;
+}
+
+.set-top-form {
     margin-top: -90px;
 }
 
-.set-question-top{
-    padding-top: 120px;
+.set-question-top {
+    padding-top: 50px;
 }
 
-.bg-question-form{
+.set-margin-button-feedback{
+    margin-top: -40px;
+    margin-right: 40px;
+}
+
+.bg-question-form {
     background-image: url("../../assets/images/feedback/bg-question.png");
     background-repeat: no-repeat;
-    background-size: 740px 300px;
+    background-size: 500px 250px;
 }
 
-.title-question{
+.bg-thanks{
+    background-image: url("../../assets/images/feedback/thanks.png");
+    background-repeat: no-repeat;
+    background-size: 500px 250px;
+}
+
+.card-feedback {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 25px;
+}
+
+.label-feedback{
+    font-size: 16px;
+    color: #fff; 
+    text-transform: uppercase;
+}
+
+.label-feedback-product{
+    font-size: 12px;
+    color: #fff; 
+    text-transform: uppercase;
+}
+
+.title-question {
     font-size: 18px;
     color: #fff;
+    text-transform: uppercase;
+}
+
+.btn-feedback{
+    margin-top: -20px;
+}
+
+.btn-feedback-note{
+    margin-top: -50px;
+}
+
+.btn-feedback-thanks{
+    margin-top: -50px;
 }
 
 /*Nav Admin*/
+
 .main-header .navbar-nav .nav-item .top-item {
     margin: 0;
 }
@@ -401,7 +507,7 @@ input[type="number"] {
     list-style: none;
 }
 
-.main-header .navbar-nav .nav-item .top-item{
+.main-header .navbar-nav .nav-item .top-item {
     margin: 0;
 }
 
@@ -420,21 +526,18 @@ li.top-item {
 }
 
 .nav-sidebar .menu-open>.nav-link i.right {
-    -webkit-transform: rotate(
--90deg
-);
-    transform: rotate(
--90deg
-);
+    -webkit-transform: rotate( -90deg);
+    transform: rotate( -90deg);
 }
 
 .nav-sidebar .top-item>.nav-link .right {
     transition: -webkit-transform ease-in-out .3s;
     transition: transform ease-in-out .3s;
-    transition: transform ease-in-out .3s,-webkit-transform ease-in-out .3s;
+    transition: transform ease-in-out .3s, -webkit-transform ease-in-out .3s;
 }
 
-.nav-sidebar .nav-link>.right, .nav-sidebar .nav-link>p>.right {
+.nav-sidebar .nav-link>.right,
+.nav-sidebar .nav-link>p>.right {
     position: absolute;
     right: 1rem;
     top: .7rem;
@@ -463,6 +566,7 @@ div.dataTables_wrapper div.dataTables_filter {
 /* ==========================================================================
    MEDIA
    ========================================================================== */
+
 @media (min-width: 1200px) {
     .container {
         max-width: 980px;
@@ -472,12 +576,10 @@ div.dataTables_wrapper div.dataTables_filter {
 @media (max-width: 576px) {
     .set-padding {
         padding: 0px;
-    }   
-
-    .set-padding-top{
+    }
+    .set-padding-top {
         padding-top: 100px;
     }
-
     .bg-register-form {
         background-image: url("../../assets/images/games/bg-form-register.png");
         background-repeat: no-repeat;

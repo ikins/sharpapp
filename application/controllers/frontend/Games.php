@@ -15,7 +15,7 @@ class Games extends CI_Controller {
 		$this->load->library('user_agent');
 
 		//model
-		
+		$this->load->model('games_model');
 	}
 
 	public function register()
@@ -23,6 +23,27 @@ class Games extends CI_Controller {
 		$data['title'] = 'Sharp Games Register';						
 		$data['main_content'] = 'frontend/games/register';
 		$this->load->view('template/frontend/view', $data);
+
+	}
+
+	public function save()
+	{
+		$name = $this->input->post('name');
+		$email = $this->input->post('email');
+		$phone = $this->input->post('phone');
+		//insert new ip
+		$data = array(
+
+			'game_name' 	=> $name,
+			'game_email' 	=> $email,
+			'game_phone' 	=> $phone,
+
+		);
+		$result = $this->games_model->game_register($data);
+
+		if($result){
+			redirect('games/play');
+		}
 
 	}
 

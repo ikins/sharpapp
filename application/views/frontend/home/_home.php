@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title;?></title>
-    <link rel="icon" href="<?= base_url(); ?>assets/images/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/ring.css">
@@ -39,7 +38,7 @@
     <div id="menu" style="display: none;">
         <div class="row menu-link">
             <div class="col-md-2  col-2 text-center  px-0">
-                <a type="button" class="menu_link" data-toggle="modal" data-target="#feedbackModal" modal-title="Feedback">
+                <a type="button" class="menu_link" modal-url="<?php echo base_url() ?>feedback/form" modal-title="Mekanisme">
                     <img class="icononframe" src="<?= base_url(); ?>assets/images/feedback-icon.png">
                 </a>
             </div>
@@ -103,15 +102,14 @@
     </div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="embed-responsive embed-responsive-16by9">
-               <iframe class="embed-responsive-item" src="<?php echo base_url();?>feedback/form" allowfullscreen></iframe>
+    <div class="modal fade" id="modalfeedback" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content" >
+                <div class="modal-body p-0" >
+                    
+                </div>
             </div>
         </div>
-      </div>
     </div>
     <!-- base_url -->
     <input type="hidden" id="url" value="<?php echo base_url();?>">
@@ -172,49 +170,49 @@
         document.querySelector("#audio").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 100);
             KuulaPlayerAPI.setZoom(e.frame, -15);
-            $("#on_bt").show();
-            $("#off_bt").hide();
-            x.muted = false;
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
         });
 
         document.querySelector("#ref").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 135);
             KuulaPlayerAPI.setZoom(e.frame, -15);
-            $("#on_bt").show();
-            $("#off_bt").hide();
-            x.muted = false;
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
         });
 
         document.querySelector("#was").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 165);
             KuulaPlayerAPI.setZoom(e.frame, -15);
-            $("#on_bt").show();
-            $("#off_bt").hide();
-            x.muted = false;
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
         });
 
         document.querySelector("#ac").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 195);
             KuulaPlayerAPI.setZoom(e.frame, -15);
-            $("#on_bt").show();
-            $("#off_bt").hide();
-            x.muted = false;
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
         });
 
         document.querySelector("#ha").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 225);
             KuulaPlayerAPI.setZoom(e.frame, -15);
-            $("#on_bt").show();
-            $("#off_bt").hide();
-            x.muted = false;
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
         });
 
         document.querySelector("#sl").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 255);
             KuulaPlayerAPI.setZoom(e.frame, -15);
-            $("#on_bt").show();
-            $("#off_bt").hide();
-            x.muted = false;
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
         });
 
         document.querySelector("#stage").addEventListener("click", function() {
@@ -228,17 +226,17 @@
         document.querySelector("#games").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, -60);
             KuulaPlayerAPI.setZoom(e.frame, -5);
-            $("#on_bt").show();
-            $("#off_bt").hide();
-            x.muted = false;
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
         });
 
         document.querySelector("#photo").addEventListener("click", function() {
             KuulaPlayerAPI.setHeading(e.frame, 60);
             KuulaPlayerAPI.setZoom(e.frame, -5);
-            $("#on_bt").show();
-            $("#off_bt").hide();
-            x.muted = false;
+            $("#on_bt").hide();
+            $("#off_bt").show();
+            x.muted = true;
         });
 
         //product category 27022021
@@ -253,11 +251,7 @@
         // console.log("Frame id:          " + e.frame);
         // console.log("Hotspot unique id: " + e.data.uid);
         // console.log("Hotspot name:      " + e.data.name);
-        var x = document.getElementById("audio-bg"); 
-        $("#on_bt").hide();
-        $("#off_bt").show();
-        x.muted = true;
-        
+
         var name_product_category = e.data.name;
         if(name_product_category == 'vp_audio'){
             //alert('Audio');

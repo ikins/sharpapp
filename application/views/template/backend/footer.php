@@ -8,6 +8,21 @@
 </div>
 <!-- ./wrapper -->
 
+<script>
+  $(function () {
+    $('#tabledashboard').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+
+</script>
+
 
 </body>
 </html>

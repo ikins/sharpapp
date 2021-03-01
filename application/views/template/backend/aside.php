@@ -12,7 +12,7 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="top-item">
+          <li class="nav-item">
             <a href="<?= base_url(); ?>dashboard/voucher" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>
@@ -20,7 +20,7 @@
               </p>
             </a>
           </li>
-          <li class="top-item">
+          <li class="nav-item">
             <a href="<?= base_url(); ?>dashboard/feedback" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>
@@ -28,7 +28,7 @@
               </p>
             </a>
           </li>
-          <li class="top-item">
+          <li class="nav-item">
             <a href="<?= base_url(); ?>dashboard/game" class="nav-link">
               <i class="nav-icon fas fa-list-ul"></i>
               <p>
@@ -36,7 +36,7 @@
               </p>
             </a>
           </li>
-          <li class="top-item">
+          <li class="nav-item">
             <a href="<?= base_url(); ?>dashboard/photobooth" class="nav-link">
               <i class="nav-icon fas fa-list-ul"></i>
               <p>
@@ -44,7 +44,7 @@
               </p>
             </a>
           </li>
-          <li class="top-item">
+          <li class="nav-item">
             <a href="<?= base_url(); ?>dashboard/visitor-product" class="nav-link">
               <i class="nav-icon fas fa-list-ol"></i>
               <p>
@@ -52,7 +52,7 @@
               </p>
             </a>
           </li>
-          <li class="top-item">
+          <li class="nav-item">
             <a href="<?= base_url(); ?>dashboard/visitor-buy" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -60,7 +60,7 @@
               </p>
             </a>
           </li>
-          <li class="top-item">
+          <li class="nav-item">
             <a href="<?= base_url(); ?>dashboard/visitor-event-live" class="nav-link">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
@@ -68,19 +68,19 @@
               </p>
             </a>
           </li>
-          <li class="top-item">
+          <li class="nav-item">
             <a href="<?= base_url(); ?>dashboard/visitor-daily" class="nav-link">
                   <i class="nav-icon fas fa-list-alt"></i>
                   <p>Visitor Daily</p>
                 </a>
           </li>
-          <li class="top-item">
+          <li class="nav-item">
             <a href="<?= base_url(); ?>dashboard/visitor-daily-history" class="nav-link">
                   <i class="nav-icon fas fa-list-alt"></i>
                   <p>Visitor Daily History</p>
                 </a>
           </li>
-          <li class="top-item">
+          <li class="nav-item">
             <a href="<?= base_url(); ?>dashboard/visitor-feedback" class="nav-link">
               <i class="nav-icon fas fa-list-ol"></i>
               <p>
@@ -88,7 +88,7 @@
               </p>
             </a>
           </li>
-          <li class="top-item">
+          <li class="nav-item">
             <a href="<?= base_url(); ?>dashboard/visitor-game" class="nav-link">
               <i class="nav-icon fas fa-list-ol"></i>
               <p>
