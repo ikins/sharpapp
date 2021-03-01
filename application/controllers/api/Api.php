@@ -10,6 +10,8 @@ class Api extends CI_Controller {
         parent::__construct();
         //load model web
         $this->load->model('games_model');
+        //
+        $this->config->set_item('csrf_protection', TRUE);
     
     }
 

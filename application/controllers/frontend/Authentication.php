@@ -7,6 +7,9 @@ class Authentication extends CI_Controller {
 	{
 		parent::__construct();
 
+		//Session
+		$this->load->library('session');
+		
 		//model
 		$this->load->model('auth_model');	
 

@@ -11,6 +11,9 @@ class Photobooth extends CI_Controller {
 	{
 		parent::__construct();
 
+		//Session
+		$this->load->library('session');
+		
 		//User Login
 		$this->is_user_sharp();
 

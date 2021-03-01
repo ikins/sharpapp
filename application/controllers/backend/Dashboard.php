@@ -13,6 +13,9 @@ class Dashboard extends CI_Controller {
 
 		$this->load->library('user_agent');
 
+		//Session
+		$this->load->library('session');
+		
 		//User Login
 		$this->is_user_sharp();
 

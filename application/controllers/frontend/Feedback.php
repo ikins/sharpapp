@@ -11,6 +11,9 @@ class Feedback extends CI_Controller {
 	{
 		parent::__construct();
 
+		//Session
+		$this->load->library('session');
+		
 		//library
 		$this->load->library('user_agent');
 
