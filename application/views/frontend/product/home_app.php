@@ -1,6 +1,6 @@
 <div class="container-product">
 <div class="product">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/YO6yr33hwUQ?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SfUuM-OylG4?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <div id="shop" >
     <div class="row btn-shop">

@@ -269,26 +269,26 @@ img.buy-btn {
 /* popup close */
 
 .modal-header {
-    display: unset;
-    -ms-flex-align: unset;
-    align-items: unset;
-    -ms-flex-pack: unset;
-    justify-content: unset;
-    padding: unset;
-    border-bottom: unset;
-    border-top-left-radius: unset;
-    position: absolute;
-    top: 0.5rem;
-    left: 45rem;
-    border-top-right-radius: unset;
+    display: unset !important;
+    -ms-flex-align: unset !important;
+    align-items: unset !important;
+    -ms-flex-pack: unset !important;
+    justify-content: unset !important;
+    padding: unset !important;
+    border-bottom: unset !important;
+    border-top-left-radius: unset !important;
+    position: absolute !important;
+    top: 0.5rem !important;
+    left: 45rem !important;
+    border-top-right-radius: unset !important;
 }
 
 .modal-header .close,
 .modal-header .mailbox-attachment-close {
-    padding: 1rem;
-    margin: -1rem -1rem -1rem auto;
-    font-size: 50px;
-    color: #ef4951;
+    padding: 1rem !important;
+    margin: -1rem -1rem -1rem auto !important;
+    font-size: 50px !important;
+    color: #ef4951 !important;
 }
 
 
