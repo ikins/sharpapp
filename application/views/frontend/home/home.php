@@ -63,7 +63,7 @@
             <source src="<?= base_url(); ?>assets/bg_music.mp3">
         </audio>
         <nav class="navbar nav-justified fixed-bottom navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button id="nav" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -106,7 +106,13 @@
     <!-- Modal -->
     <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
+      
         <div class="modal-content">
+            <div class="modal-header" >            
+                <button id="feedbck" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
             <div class="embed-responsive embed-responsive-16by9">
                <iframe class="embed-responsive-item" src="<?php echo base_url();?>feedback/form" allowfullscreen></iframe>
             </div>
@@ -143,6 +149,7 @@
     });
 </script>
 <script>
+    
     $(".menu_link").on("click",function()
         {
           $("#modalfeedback .modal-dialog").addClass('modal-lg');
@@ -151,7 +158,6 @@
           $("#modalfeedback").modal('show');
           
         });
-
     var x = document.getElementById("audio-bg"); 
     $("#on_bt").on("click",function(){
       $("#on_bt").hide();
@@ -163,6 +169,14 @@
       $("#off_bt").hide();
       $("#on_bt").show();
       x.muted = false;
+    });
+
+    var ctrlVideo = document.getElementById("welcomevideo");
+    $("#feedbck").on("click",function(){
+      ctrlVideo.muted = true;
+    });
+    $("#nav").on("click",function(){
+      ctrlVideo.muted = true;
     });
     
 

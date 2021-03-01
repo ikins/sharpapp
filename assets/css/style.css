@@ -141,6 +141,14 @@ li.nav-item.active {
         background-color: #e6e7e8;
         border: 1px solid #e6e7e8;
     }
+    #shop {
+        position: fixed;
+        bottom: 5px !important;
+        right: 45px !important;
+    }
+    img.buy-btn {
+        width: 130px !important;
+    }
 }
 
 img.icononframe {
@@ -192,7 +200,7 @@ img.icononframe {
 }
 
 img.buy-btn {
-    width: 200px !important;
+    width: 200px;
 }
 
 
@@ -233,6 +241,54 @@ img.buy-btn {
 ::placeholder {
     text-transform: uppercase;
     color: #ef4951 !important;
+}
+
+
+/* frame shoppe */
+
+.container-live {
+    position: fixed;
+    background-image: url('../images/frame.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.live {
+    position: absolute;
+    padding: 14.9% 5.9% 5.6%;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+
+/* popup close */
+
+.modal-header {
+    display: unset;
+    -ms-flex-align: unset;
+    align-items: unset;
+    -ms-flex-pack: unset;
+    justify-content: unset;
+    padding: unset;
+    border-bottom: unset;
+    border-top-left-radius: unset;
+    position: absolute;
+    top: 0.5rem;
+    left: 45rem;
+    border-top-right-radius: unset;
+}
+
+.modal-header .close,
+.modal-header .mailbox-attachment-close {
+    padding: 1rem;
+    margin: -1rem -1rem -1rem auto;
+    font-size: 50px;
+    color: #ef4951;
 }
 
 
@@ -415,7 +471,7 @@ input[type="number"] {
     height: 100%;
 }
 
-.content-feedback{
+.content-feedback {
     margin-left: 120px;
     margin-right: 80px;
 }
@@ -432,7 +488,7 @@ input[type="number"] {
     padding-top: 50px;
 }
 
-.set-margin-button-feedback{
+.set-margin-button-feedback {
     margin-top: -40px;
     margin-right: 40px;
 }
@@ -443,7 +499,7 @@ input[type="number"] {
     background-size: 500px 250px;
 }
 
-.bg-thanks{
+.bg-thanks {
     background-image: url("../../assets/images/feedback/thanks.png");
     background-repeat: no-repeat;
     background-size: 500px 250px;
@@ -456,15 +512,15 @@ input[type="number"] {
     padding: 25px;
 }
 
-.label-feedback{
+.label-feedback {
     font-size: 16px;
-    color: #fff; 
+    color: #fff;
     text-transform: uppercase;
 }
 
-.label-feedback-product{
+.label-feedback-product {
     font-size: 12px;
-    color: #fff; 
+    color: #fff;
     text-transform: uppercase;
 }
 
@@ -474,17 +530,18 @@ input[type="number"] {
     text-transform: uppercase;
 }
 
-.btn-feedback{
+.btn-feedback {
     margin-top: -20px;
 }
 
-.btn-feedback-note{
+.btn-feedback-note {
     margin-top: -50px;
 }
 
-.btn-feedback-thanks{
+.btn-feedback-thanks {
     margin-top: -50px;
 }
+
 
 /*Nav Admin*/
 
