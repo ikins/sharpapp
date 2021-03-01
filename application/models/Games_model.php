@@ -37,4 +37,10 @@ function game_register($data)
 		return $insert;	
 	}
 
+function game_update_score($gameID, $data)
+	{					
+		$this->db->where('game_id', $gameID);
+		$this->db->update('game', $data);				
+	}
+
 }

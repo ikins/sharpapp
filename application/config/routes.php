@@ -51,6 +51,10 @@ $route['feedback/sample'] = 'frontend/feedback/feedback_sample';
 //Photobooth
 $route['photobooth/screen'] = 'frontend/photobooth/photobooth_screen';
 
+//Api
+$route['api/requestToken'] = 'api/api/reqToken';
+$route['api/end'] = 'api/api/endGame';
+
 
 //================================================================================backend
 $route['dashboard/logout'] = 'backend/dashboard/logout';
