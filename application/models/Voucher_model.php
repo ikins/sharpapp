@@ -21,4 +21,24 @@ function v_list()
 
 	}
 
+function v_detail($v_id)
+	{	
+
+		$q = $this->db->select('a.*')
+				
+		->from('voucher a')
+		->where('a.v_id', $v_id);			
+					
+		$result = $q->get()->result();
+		return $result;
+
+	}
+
+function v_edit($v_id, $data)
+	{					
+		$this->db->where('v_id', $v_id);
+		$this->db->update('voucher', $data);				
+	}
+
+
 }

@@ -22,6 +22,8 @@ class Dashboard extends CI_Controller {
 		//model
 		$this->load->model('product_model');
 		$this->load->model('daily_model');
+		//
+		$this->load->helper('cookie');
 
 	}
 
@@ -32,7 +34,7 @@ class Dashboard extends CI_Controller {
 		
 		if(!isset($is_user_sharp) || $is_user_sharp != true)
 		{
-			redirect('/');
+			redirect('/login');
 		}	
 	}
 
@@ -41,7 +43,7 @@ class Dashboard extends CI_Controller {
 	{
 		
 		$this->session->unset_userdata('is_user_sharp');
-		redirect('/');
+		redirect('/login');
 	}
 
 	public function dashboard()
@@ -56,6 +58,8 @@ class Dashboard extends CI_Controller {
 		$data['list'] = json_encode($list);
 		$data['history'] = $this->daily_model->daily_history();
 		$this->load->view('template/backend/view', $data);
+
+		//echo "Cookie : ".get_cookie('cookie_name');
 	}	
 
 	public function reqip()

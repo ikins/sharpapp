@@ -1,9 +1,4 @@
-<div style="background-color: #000;">
-	<div class="container">
-	  <div class="row justify-content-center">
-	    <div class="col-md-6">
-	    	<div id="vb-kGZpMxLJ"  style="height: 800px; width: 525px"></div><script src="https://app.virtualbooth.me/embed/kGZpMxLJ"></script><script>PhotoBooth.initWidget("vb-kGZpMxLJ", "kGZpMxLJ");</script>
-	    </div>
-	  </div>
-	</div>
-</div>
+<title>Sharp Photobooth</title>
+<div id="vb-kGZpMxLJ"></div><script src="https://app.virtualbooth.me/embed/kGZpMxLJ"></script><script>PhotoBooth.initWidget("vb-kGZpMxLJ", "kGZpMxLJ");</script>
+
+<!-- <iframe src="https://app.virtualbooth.me/booth/kGZpMxLJ" width="992" height="775" scrolling="no" frameborder="0"></iframe> -->

@@ -27,7 +27,7 @@ class Photobooth extends CI_Controller {
 		
 		if(!isset($is_user_sharp) || $is_user_sharp != true)
 		{
-			redirect('/');
+			redirect('/login');
 		}	
 	}
 

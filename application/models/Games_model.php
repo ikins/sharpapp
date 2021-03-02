@@ -33,14 +33,31 @@ function game_visitor_list()
 
 function game_register($data)
 	{
+
 		$insert = $this->db->insert('game', $data);
-		return $insert;	
+		$id = $this->db->insert_id();
+		return (isset($id)) ? $id : FALSE;
 	}
 
 function game_update_score($gameID, $data)
 	{					
 		$this->db->where('game_id', $gameID);
 		$this->db->update('game', $data);				
+	}
+
+function game_voucher()
+	{	
+
+		$q_voucher = $this->db->select('v_code as voucher', FALSE)
+		->from('voucher a')
+		->where('a.v_status', "1")
+		->where('a.v_category', "2");
+
+		$tmp_voucher = $q_voucher->get()->result();
+
+		$result['voucher'] = $tmp_voucher[0]->voucher;
+		return $result;
+
 	}
 
 }

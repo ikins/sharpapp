@@ -19,6 +19,10 @@ class Games extends CI_Controller {
 
 		//model
 		$this->load->model('games_model');
+
+		//
+		$this->load->helper('cookie');
+		$this->load->helper('string');
 	}
 
 	public function register()
@@ -34,19 +38,28 @@ class Games extends CI_Controller {
 		$name = $this->input->post('name');
 		$email = $this->input->post('email');
 		$phone = $this->input->post('phone');
+		$token_id = random_string('alnum', 8);
 		//insert new ip
 		$data = array(
 
 			'game_name' 	=> $name,
 			'game_email' 	=> $email,
 			'game_phone' 	=> $phone,
+			'game_token' 	=> $token_id,
 
 		);
 		$result = $this->games_model->game_register($data);
 
-		if($result){
-			redirect('games/play');
-		}
+		//set session
+		$data = array(
+						'game_id' => $result,		
+						'is_game' => true
+					);
+					
+		$this->session->set_userdata('is_game', $data);
+	    redirect('games/play');
+
+		//echo $this->input->cookie('game_sharp',true);
 
 	}
 

@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+header('Access-Control-Allow-Origin: *');
 /**
  * @package  : API
  */
@@ -8,20 +9,32 @@ class Api extends CI_Controller {
     public function __construct() {
 
         parent::__construct();
+        
+        //Session
+        $this->load->library('session');
+
         //load model web
         $this->load->model('games_model');
+        
         //
         $this->config->set_item('csrf_protection', TRUE);
+        //
+
+        //variable session
+        $this->player = $this->session->userdata('is_game');
+        
     
     }
 
 
     public function reqToken() {
-
-        $game_id = $this->input->get('game_id');
-        $token_id = $this->input->get('token_id');
+        header('Access-Control-Allow-Origin: *');
+        //get session browser
+        $is_game = $this->session->userdata('is_game');
+        $game_id = $this->player['game_id'];
+        $token_id = $this->player['token_id'];
         //
-        if(!empty($token_id)){
+        if($is_game == true){
 
             $response['status'] = 'success';
             $response['message'] = 'token ID player true';
@@ -41,29 +54,39 @@ class Api extends CI_Controller {
     }
 
     public function endGame()
-    {
+    {   
+        
         $data = (array)json_decode(file_get_contents('php://input'));
         $tokenID = $data['tokenID'];
         $gameID = $data['gameID'];
         $score = $data['score'];
 
         //check score
-         if($score < 100){
+         if($score < 1){
             $response['status'] = 'failed';
             $response['message'] = 'score failed < 100 poin';
             header('Content-Type: application/json');
+            header('Access-Control-Allow-Origin: *');
+            header("Access-Control-Allow-Methods: GET, OPTIONS");
+            header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
             echo json_encode($response,TRUE);
          }else{
+
+            //get voucher game
+            $vf = $this->games_model->game_voucher();
+            $game_voucher = $vf['voucher'];
 
             $data = array(
 
                 'game_token'     => $tokenID,
                 'game_id'        => $gameID,
-                'game_score'     => $score
+                'game_score'     => $score,
+                'game_voucher'   => $game_voucher
 
             );
 
             $result = $this->games_model->game_update_score($gameID, $data);
+
 
                 $response['status'] = 'success';
                 $response['message'] = 'score entry';
@@ -71,6 +94,9 @@ class Api extends CI_Controller {
                 $response['game_id'] = $gameID;
                 $response['score'] = $score;
                 header('Content-Type: application/json');
+                header('Access-Control-Allow-Origin: *');
+                header("Access-Control-Allow-Methods: GET, OPTIONS");
+                header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
                 echo json_encode($response,TRUE);
 
         }

@@ -468,6 +468,12 @@ input[type="number"] {
     text-transform: uppercase;
 }
 
+.label-feedback-q8{
+    font-size: 18px;
+    color: #fff; 
+    text-transform: uppercase;
+}
+
 .title-question {
     font-size: 18px;
     color: #fff;

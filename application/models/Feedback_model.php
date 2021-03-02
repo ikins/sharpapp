@@ -31,4 +31,19 @@ function feedback_visitor_list()
 		return $result;
 	}
 
+function fb_voucher()
+	{	
+
+		$q_voucher = $this->db->select('v_code as voucher', FALSE)
+		->from('voucher a')
+		->where('a.v_status', "1")
+		->where('a.v_category', "1");
+
+		$tmp_voucher = $q_voucher->get()->result();
+
+		$result['voucher'] = $tmp_voucher[0]->voucher;
+		return $result;
+
+	}
+
 }

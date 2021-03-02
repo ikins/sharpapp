@@ -24,6 +24,7 @@
                   <thead>
                     <tr>
                       <th>No.</th>
+                      <th>Date</th>
                       <th>Name</th>
                       <th>Email</th>
                       <th>Phone</th>
@@ -159,9 +160,54 @@
                         break;
                     }
 
+                    switch ($rows->fb_question_7) {
+                      case '1':
+                        $fb_q7 = 'Audio Visual'; 
+                        break;
+                      
+                      case '2':
+                        $fb_q7 = 'Refrigenerator';
+                        break;
+
+                      case '3':
+                        $fb_q7 = 'Washing Machine';
+                        break;
+
+                      case '4':
+                        $fb_q7 = 'Air Conditioner & Air Purifier';
+                        break;
+
+                      case '5':
+                        $fb_q7 = 'Small Home Appliance';
+                        break;
+
+                      case '7':
+                        $fb_q7 = 'Smartphone & Laptop';
+                        break;
+
+                      case '':
+                        $fb_q7 = '-';
+                        break;
+                    }
+
+                    switch ($rows->fb_question_8) {
+                      case '1':
+                        $fb_q8 = 'Ya'; 
+                        break;
+                      
+                      case '0':
+                        $fb_q8 = 'Tidak';
+                        break;
+
+                      case '':
+                        $fb_q8 = '-';
+                        break;
+                    }
+
                     ?>
                     <tr>
                       <td><?php echo $i; ?></td>
+                      <td><?php echo date('d M Y h:i', strtotime($rows->fb_date)); ?></td>
                       <td><?php echo $rows->fb_name; ?></td>
                       <td><?php echo $rows->fb_email; ?></td>
                       <td><?php echo $rows->fb_phone; ?></td>
@@ -172,8 +218,8 @@
                       <td><?php echo $fb_q4; ?></td>
                       <td><?php echo $fb_q5; ?></td>
                       <td><?php echo $fb_q6; ?></td>
-                      <td><?php echo $rows->fb_question_7; ?></td>
-                      <td><?php echo $rows->fb_question_8; ?></td>
+                      <td><?php echo $fb_q7; ?></td>
+                      <td><?php echo $fb_q8; ?></td>
                       <td><?php echo $rows->fb_question_9; ?></td>
                     </tr>
                     <?php endforeach; ?>

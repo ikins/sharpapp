@@ -22,9 +22,9 @@ class Photobooth extends CI_Controller {
 
 	public function photobooth_screen()
 	{
-		$data['title'] = 'Photobooth Screen';						
-		$data['main_content'] = 'frontend/photobooth/main';
-		$this->load->view('template/frontend/view', $data);
+		// $data['title'] = 'Photobooth Screen';						
+		// $data['main_content'] = 'frontend/photobooth/main';
+		$this->load->view('frontend/photobooth/main');
 	}
 
 }

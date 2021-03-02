@@ -13,12 +13,17 @@ class Feedback extends CI_Controller {
 
 		//Session
 		$this->load->library('session');
+        $this->load->library('email');
+        $this->load->config('email');
 		
 		//library
 		$this->load->library('user_agent');
 
 		//model
 		$this->load->model('feedback_model');
+
+		//
+		$this->load->helper('url');
 		
 	}
 
@@ -275,6 +280,8 @@ class Feedback extends CI_Controller {
 		$fb_q8 = $this->input->post('fb_q8');
 		$fb_q9 = $this->input->post('fb_q9');
 		//
+		$vf = $this->feedback_model->fb_voucher();
+		$fb_voucher = $vf['voucher'];
 		//insert new ip
 		$data = array(
 
@@ -290,13 +297,35 @@ class Feedback extends CI_Controller {
 			'fb_question_7' 	=> $fb_q7,
 			'fb_question_8' 	=> $fb_q8,
 			'fb_question_9' 	=> $fb_q9,
+			'fb_voucher'		=> $fb_voucher
 
 		);
 		$result = $this->feedback_model->fb_add_feedback($data);
 
-		if($result){
-			redirect('feedback/results');
-		}
+		//send email
+		$from 	= "Webly.id <weblydotid@gmail.com>";
+		$_from 	= "weblydotid@gmail.com";
+		$_me 	= "Sharp Virtual Exhibition";
+
+        $subject = 'Sharp Virtual Exhibition | Feedback Sharp | Voucher';
+
+        $data['_voucher'] = $fb_voucher;
+        //
+        $email_body = $this->load->view('template/email/feedback', $data, true);
+
+        $this->email->set_newline("\r\n");
+        $this->email->from($from);
+        $this->email->to($fb_email);
+        $this->email->subject($subject);
+        $this->email->message($email_body);
+        $this->email->set_mailtype("html");
+        $this->email->reply_to($_from, $_me);
+
+        if ($this->email->send()) {
+            redirect('feedback/results');
+        }else{
+        	redirect('feedback/results');
+        }
 	}
 
 	public function feedback_results()

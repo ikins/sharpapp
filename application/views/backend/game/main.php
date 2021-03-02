@@ -27,6 +27,8 @@
                       <th>Name</th>
                       <th>Email</th>
                       <th>Phone</th>
+                      <th>Token</th>
+                      <th>Score</th>
                       <th>Voucher</th>
                       <th>Date</th>
                     </tr>
@@ -38,6 +40,8 @@
                       <td><?php echo $rows->game_name; ?></td>
                       <td><?php echo $rows->game_email; ?></td>
                       <td><?php echo $rows->game_phone; ?></td>
+                      <td><?php echo $rows->game_token; ?></td>
+                      <td><?php echo $rows->game_score; ?></td>
                       <td><?php echo $rows->game_voucher; ?></td>
                       <td><?php echo date('d M Y H:i', strtotime($rows->game_date)); ?></td>
                     </tr>
