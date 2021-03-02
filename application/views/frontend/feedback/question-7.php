@@ -13,7 +13,6 @@
             <input type="hidden" name="fb_q4" value="<?php echo $fb_q4; ?>">
             <input type="hidden" name="fb_q5" value="<?php echo $fb_q5; ?>">
             <input type="hidden" name="fb_q6" value="<?php echo $fb_q6; ?>">
-
                 <div class="card-feedback">
                   <div class="form-group m-t-20 text-center">
                     <label for="validationCustom01" class="title-question text-center">Produk apakah yang sedang Anda cari atau butuhkan saat ini?</label>
@@ -64,6 +63,15 @@
                   </div>
                 </div>
                 <div class="btn-feedback-note text-center p-t-20">
+                <div class="card-feedback text-center">
+                  <div class="form-group m-t-20">
+                    <label for="validationCustom01" class="title-question text-center">Produk apakah yang sedang Anda cari atau butuhkan saat ini?</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <textarea name="fb_q7" class="form-control" cols="55" rows="3"></textarea>
+                  </div>
+                </div>
+                <div class="btn-feedback-note text-center">
                   <button type="submit" class="btn btn-danger">NEXT</button>
                 </div>
           </form>

@@ -208,6 +208,9 @@
                     <tr>
                       <td><?php echo $i; ?></td>
                       <td><?php echo date('d M Y h:i', strtotime($rows->fb_date)); ?></td>
+                    ?>
+                    <tr>
+                      <td><?php echo $i; ?></td>
                       <td><?php echo $rows->fb_name; ?></td>
                       <td><?php echo $rows->fb_email; ?></td>
                       <td><?php echo $rows->fb_phone; ?></td>
@@ -220,6 +223,8 @@
                       <td><?php echo $fb_q6; ?></td>
                       <td><?php echo $fb_q7; ?></td>
                       <td><?php echo $fb_q8; ?></td>
+                      <td><?php echo $rows->fb_question_7; ?></td>
+                      <td><?php echo $rows->fb_question_8; ?></td>
                       <td><?php echo $rows->fb_question_9; ?></td>
                     </tr>
                     <?php endforeach; ?>

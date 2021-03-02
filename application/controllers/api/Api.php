@@ -9,6 +9,7 @@ class Api extends CI_Controller {
     public function __construct() {
 
         parent::__construct();
+
         
         //Session
         $this->load->library('session');
@@ -23,6 +24,11 @@ class Api extends CI_Controller {
         //variable session
         $this->player = $this->session->userdata('is_game');
         
+
+        //load model web
+        $this->load->model('games_model');
+        //
+        $this->config->set_item('csrf_protection', TRUE);
     
     }
 
@@ -35,6 +41,12 @@ class Api extends CI_Controller {
         $token_id = $this->player['token_id'];
         //
         if($is_game == true){
+
+
+        $game_id = $this->input->get('game_id');
+        $token_id = $this->input->get('token_id');
+        //
+        if(!empty($token_id)){
 
             $response['status'] = 'success';
             $response['message'] = 'token ID player true';
@@ -54,8 +66,8 @@ class Api extends CI_Controller {
     }
 
     public function endGame()
+
     {   
-        
         $data = (array)json_decode(file_get_contents('php://input'));
         $tokenID = $data['tokenID'];
         $gameID = $data['gameID'];
@@ -76,17 +88,24 @@ class Api extends CI_Controller {
             $vf = $this->games_model->game_voucher();
             $game_voucher = $vf['voucher'];
 
+         if($score < 100){
+            $response['status'] = 'failed';
+            $response['message'] = 'score failed < 100 poin';
+            header('Content-Type: application/json');
+            echo json_encode($response,TRUE);
+         }else{
+
             $data = array(
 
                 'game_token'     => $tokenID,
                 'game_id'        => $gameID,
                 'game_score'     => $score,
                 'game_voucher'   => $game_voucher
+                'game_score'     => $score
 
             );
 
             $result = $this->games_model->game_update_score($gameID, $data);
-
 
                 $response['status'] = 'success';
                 $response['message'] = 'score entry';

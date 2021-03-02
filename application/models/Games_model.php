@@ -37,6 +37,8 @@ function game_register($data)
 		$insert = $this->db->insert('game', $data);
 		$id = $this->db->insert_id();
 		return (isset($id)) ? $id : FALSE;
+		$insert = $this->db->insert('game', $data);
+		return $insert;	
 	}
 
 function game_update_score($gameID, $data)

@@ -22,8 +22,6 @@ class Dashboard extends CI_Controller {
 		//model
 		$this->load->model('product_model');
 		$this->load->model('daily_model');
-		//
-		$this->load->helper('cookie');
 
 	}
 

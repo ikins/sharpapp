@@ -63,7 +63,7 @@
             <source src="<?= base_url(); ?>assets/bg_music.mp3">
         </audio>
         <nav class="navbar nav-justified fixed-bottom navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button id="nav" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -107,6 +107,13 @@
     <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
+      
+        <div class="modal-content">
+            <div class="modal-header" >            
+                <button id="feedbck" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
             <div class="embed-responsive embed-responsive-16by9">
                <iframe class="embed-responsive-item" src="<?php echo base_url();?>feedback/form" allowfullscreen></iframe>
             </div>
@@ -143,6 +150,7 @@
     });
 </script>
 <script>
+    
     $(".menu_link").on("click",function()
         {
           $("#modalfeedback .modal-dialog").addClass('modal-lg');
@@ -151,7 +159,6 @@
           $("#modalfeedback").modal('show');
           
         });
-
     var x = document.getElementById("audio-bg"); 
     $("#on_bt").on("click",function(){
       $("#on_bt").hide();
@@ -163,6 +170,14 @@
       $("#off_bt").hide();
       $("#on_bt").show();
       x.muted = false;
+    });
+
+    var ctrlVideo = document.getElementById("welcomevideo");
+    $("#feedbck").on("click",function(){
+      ctrlVideo.muted = true;
+    });
+    $("#nav").on("click",function(){
+      ctrlVideo.muted = true;
     });
     
 
@@ -242,6 +257,7 @@
         });
 
         //product category 27022021
+<<<<<<< HEAD
 
 
     });
@@ -321,6 +337,87 @@
             });
         }
 
+=======
+
+
+    });
+
+    //
+    var base_url = $("#url").val();
+    //
+    KuulaPlayerAPI.addEventListener("hotspot", function(e){
+        // console.log("Frame id:          " + e.frame);
+        // console.log("Hotspot unique id: " + e.data.uid);
+        // console.log("Hotspot name:      " + e.data.name);
+        var x = document.getElementById("audio-bg"); 
+        $("#on_bt").hide();
+        $("#off_bt").show();
+        x.muted = true;
+        
+        var name_product_category = e.data.name;
+        if(name_product_category == 'vp_audio'){
+            //alert('Audio');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'1' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_ref'){
+            // alert('Ref');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'2' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_wm'){
+            // alert('WM');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'3' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_ac'){
+            // alert('AC');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'4' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_sh'){
+            // alert('SH');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'5' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }else if(name_product_category == 'vp_sl'){
+            // alert('SL');
+            $.ajax({
+               type: "POST",
+               dataType: "html",
+               url: base_url+'visit-product-category',
+               data: { category:+'6' },
+               beforeSend: function(){},
+               success: function(msg){}
+            });
+        }
+
+>>>>>>> cc69c1a4f1add0b21a8a709985b057431c95aec9
         
     });
 

@@ -14,6 +14,9 @@ $route['product/ac'] = 'frontend/product/ac';
 $route['product/home-app'] = 'frontend/product/home_app';
 $route['product/smartphone'] = 'frontend/product/smartphone';
 
+// shoppe live 
+$route['shoppe'] = 'frontend/shoppe/index';
+
 
 
 //================================================================================frontend

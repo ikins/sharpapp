@@ -23,6 +23,7 @@ class Games extends CI_Controller {
 		//
 		$this->load->helper('cookie');
 		$this->load->helper('string');
+
 	}
 
 	public function register()
@@ -60,7 +61,9 @@ class Games extends CI_Controller {
 	    redirect('games/play');
 
 		//echo $this->input->cookie('game_sharp',true);
-
+		if($result){
+			redirect('games/play');
+		}
 	}
 
 	public function play()
