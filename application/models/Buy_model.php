@@ -87,4 +87,15 @@ function buy_list()
 		return $result;
 	}
 
+function buy_count_all()
+	{
+		$q_all = $this->db->select('COUNT(*) as buy', FALSE)
+		->from('visitor_buy a');
+
+		$tmp_all = $q_all->get()->result();
+
+		$result['count_all'] = $tmp_all[0]->buy;
+		return $result;
+	}
+
 }

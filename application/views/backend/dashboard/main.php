@@ -56,7 +56,9 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Buy Now Shopee</span>
-                <span class="info-box-number">7</span>
+                <span class="info-box-number">
+                  <?php echo $count_all_buy; ?>
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>

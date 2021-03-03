@@ -22,6 +22,7 @@ class Dashboard extends CI_Controller {
 		//model
 		$this->load->model('product_model');
 		$this->load->model('daily_model');
+		$this->load->model('buy_model');
 
 	}
 
@@ -63,7 +64,8 @@ class Dashboard extends CI_Controller {
 		$data['count_all_product'] = $product['count_all'];
 		//buy visitor
 		$buy = $this->buy_model->buy_count_all();
-		$data['count_all_buyt'] = $buy['count_all'];
+		$data['count_all_buy'] = $buy['count_all'];
+		//
 		$this->load->view('template/backend/view', $data);
 
 		//echo "Cookie : ".get_cookie('cookie_name');

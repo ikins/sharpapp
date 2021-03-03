@@ -32,11 +32,6 @@
                         </label>
                       </div>
                 </div>
-                <div class="btn-feedback-note text-center p-t-20">
-                  <div class="form-check form-check-inline">
-                    <textarea name="fb_q8" class="form-control" cols="55" rows="3"></textarea>
-                  </div>
-                </div>
                 <div class="btn-feedback-note text-center">
                   <button type="submit" class="btn btn-danger">NEXT</button>
                 </div>

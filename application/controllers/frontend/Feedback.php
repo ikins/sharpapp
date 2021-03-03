@@ -303,8 +303,8 @@ class Feedback extends CI_Controller {
 		$result = $this->feedback_model->fb_add_feedback($data);
 
 		//send email
-		$from 	= "Webly.id <weblydotid@gmail.com>";
-		$_from 	= "weblydotid@gmail.com";
+		$from 	= "sharpvirtualexhibition.id <hello@sharpvirtualexhibition.id>";
+		$_from 	= "hello@sharpvirtualexhibition.id";
 		$_me 	= "Sharp Virtual Exhibition";
 
         $subject = 'Sharp Virtual Exhibition | Feedback Sharp | Voucher';

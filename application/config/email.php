@@ -2,14 +2,14 @@
 
 $config = array(
     'protocol' => 'smtp', // 'mail', 'sendmail', or 'smtp'
-    'smtp_host' => 'smtp.gmail.com', 
-    'smtp_port' => 587,
-    'smtp_user' => 'weblydotid@gmail.com',
-    'smtp_pass' => '989WEkij@rr',
-    'smtp_crypto' => 'tls', //can be 'ssl' or 'tls' for example
+    'smtp_host' => 'mail.sharpvirtualexhibition.id', 
+    'smtp_port' => 465,
+    'smtp_user' => 'hello@sharpvirtualexhibition.id',
+    'smtp_pass' => 'sn&t)nqzwm',
+    'smtp_crypto' => 'ssl', //can be 'ssl' or 'tls' for example
     'mailtype' => 'html', //plaintext 'text' mails or 'html'
-    'smtp_timeout' => '4', //in seconds
+    //'smtp_timeout' => '4', //in seconds
     'newline'    => "\r\n",
-    'charset' => 'iso-8859-1',
+    //'charset' => 'iso-8859-1',
     'wordwrap' => TRUE
 );

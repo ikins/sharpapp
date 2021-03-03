@@ -50,7 +50,7 @@ $route['feedback/results'] = 'frontend/feedback/feedback_results';
 $route['feedback/share'] = 'frontend/feedback/feedback_share';
 $route['feedback/share/results'] = 'frontend/feedback/feedback_share_results';
 
-//$route['feedback/sample'] = 'frontend/feedback/feedback_sample';
+$route['feedback/sample'] = 'frontend/feedback/feedback_sample';
 
 //Photobooth
 $route['photobooth/screen'] = 'frontend/photobooth/photobooth_screen';
