@@ -74,7 +74,8 @@ function product_list()
 	{	
 		$q = $this->db->select('a.*')
 				
-		->from('visitor_product a');			
+		->from('visitor_product a')
+		->order_by('a.vp_id DESC');			
 					
 		$result = $q->get()->result();
 		return $result;

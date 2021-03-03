@@ -11,6 +11,8 @@ class Games extends CI_Controller {
 	{
 		parent::__construct();
 
+		$this->load->library('user_agent');
+
 		//Session
 		$this->load->library('session');
 		
@@ -36,9 +38,10 @@ class Games extends CI_Controller {
 
 	public function save()
 	{
-		$name = $this->input->post('name');
-		$email = $this->input->post('email');
-		$phone = $this->input->post('phone');
+		$ip 	= $this->input->ip_address();
+		$name 	= $this->input->post('name');
+		$email 	= $this->input->post('email');
+		$phone 	= $this->input->post('phone');
 		$token_id = random_string('alnum', 8);
 		//insert new ip
 		$data = array(
@@ -47,27 +50,46 @@ class Games extends CI_Controller {
 			'game_email' 	=> $email,
 			'game_phone' 	=> $phone,
 			'game_token' 	=> $token_id,
+			'game_ip' 		=> $ip,
 
 		);
 		$result = $this->games_model->game_register($data);
+		redirect('games/play');
+		// if($result){
+		// 	//set session
+		// 	$data_session = array(
+		// 					'game_id' => $result,
+		// 					'token_id' => $token_id,
+		// 					'session_id' => 1,		
+		// 					'is_game' => true
+		// 				);
+						
+		// 	$this->session->set_userdata('is_game', $data_session);
 
-		//set session
-		$data = array(
-						'game_id' => $result,		
-						'is_game' => true
-					);
-					
-		$this->session->set_userdata('is_game', $data);
-	    redirect('games/play');
-
-		//echo $this->input->cookie('game_sharp',true);
-		if($result){
-			redirect('games/play');
-		}
+		// 	if($this->session->userdata('is_game')){
+		// 	  	$is_game = $this->session->userdata('is_game');
+		// 		print_r($is_game['game_id']);
+		// 		// redirect('games/play');
+		// 	}else{
+		// 	    echo "failed";
+		// 	}
+		//     // if($isGame){redirect('games/play');}else{
+		//     // 	echo 'failed session';
+		//     // }
+		// }else{
+		// 	redirect('games/play');
+		// }
+		
 	}
 
 	public function play()
 	{
+		if($this->session->userdata('is_game')){
+			$is_game = $this->session->userdata('is_game');
+			print_r($is_game['game_id']);
+			echo "session";
+		}
+
 		$data['title'] = 'Sharp Games Play';						
 		$data['main_content'] = 'frontend/games/play';
 		$this->load->view('template/frontend/view', $data);
@@ -87,6 +109,26 @@ class Games extends CI_Controller {
 		$data['title'] = 'Sharp Games Failed';						
 		$data['main_content'] = 'frontend/games/failed';
 		$this->load->view('template/frontend/view', $data);
+
+	}
+
+	//
+	public function check()
+	{
+		$game_id 	= $this->input->get('gameID');
+		$token_id 	= $this->input->get('tokenID');
+		$score 	= $this->input->get('score');
+
+		//check games
+		$result = $this->games_model->g_check($game_id);
+		foreach ($result as $row) {
+			$reward = $row->game_reward;
+			if($reward == '1'){
+				redirect('games/success');
+			}else{
+				redirect('games/failed');	
+			}
+		}
 
 	}
 

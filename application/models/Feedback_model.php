@@ -14,7 +14,8 @@ function fb_list()
 
 		$q = $this->db->select('a.*')
 				
-		->from('feedback a');			
+		->from('feedback a')
+		->order_by('a.fb_id DESC');		
 					
 		$result = $q->get()->result();
 		return $result;

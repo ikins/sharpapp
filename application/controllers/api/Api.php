@@ -10,7 +10,8 @@ class Api extends CI_Controller {
 
         parent::__construct();
 
-        
+        $this->load->library('user_agent');
+
         //Session
         $this->load->library('session');
 
@@ -35,48 +36,69 @@ class Api extends CI_Controller {
 
     public function reqToken() {
         header('Access-Control-Allow-Origin: *');
-        //get session browser
-        $is_game = $this->session->userdata('is_game');
-        $game_id = $this->player['game_id'];
-        $token_id = $this->player['token_id'];
-        //
-        if($is_game == true){
-
-
-        $game_id = $this->input->get('game_id');
-        $token_id = $this->input->get('token_id');
-        //
-        if(!empty($token_id)){
-
-            $response['status'] = 'success';
-            $response['message'] = 'token ID player true';
-            $response['game_id'] = $game_id;
-            $response['token_id'] = $token_id;
-            header('Content-Type: application/json');
-            echo json_encode($response,TRUE);
-
-        }else{
-
+        $ip = $this->input->ip_address();
+        //getbyip
+        $results = $this->games_model->g_player($ip);
+        if(empty($results)){
             $response['status'] = 'failed';
-            $response['message'] = 'token ID player empty';
+            $response['message'] = 'user true';
+            $response['game_id'] = 3;
+            $response['token_id'] = 'SG000001';
             header('Content-Type: application/json');
+            header('Access-Control-Allow-Origin: *');
+            header("Access-Control-Allow-Methods: GET, OPTIONS");
+            header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
             echo json_encode($response,TRUE);
+        }else{
+            foreach ($results as $row) {
+                //update status play
+                $gameID = $row->game_id;
+                $data = array(
+                    'game_status'     => 1,
+                );
+                $this->games_model->game_update_status($gameID, $data);
+                //
+                $response['status'] = 'success';
+                $response['message'] = 'user true';
+                $response['game_id'] = $row->game_id;
+                $response['token_id'] = $row->game_token;
+                header('Content-Type: application/json');
+                header('Access-Control-Allow-Origin: *');
+                header("Access-Control-Allow-Methods: GET, OPTIONS");
+                header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
+                echo json_encode($response,TRUE);
+            }
+            
         }
-        
+      
     }
 
     public function endGame()
-
     {   
+        
+        //
         $data = (array)json_decode(file_get_contents('php://input'));
         $tokenID = $data['tokenID'];
         $gameID = $data['gameID'];
         $score = $data['score'];
 
         //check score
-         if($score < 1){
+         if($score < 100){
+            //update reward
+            $data = array(
+
+                    'game_token'     => $tokenID,
+                    'game_id'        => $gameID,
+                    'game_score'     => $score,
+                    'game_status'    => '0',
+                    'game_reward'    => '0'
+
+                );
+
+            $result = $this->games_model->game_update_score($gameID, $data);
+            //
             $response['status'] = 'failed';
-            $response['message'] = 'score failed < 100 poin';
+            $response['message'] = 'score failed';
             header('Content-Type: application/json');
             header('Access-Control-Allow-Origin: *');
             header("Access-Control-Allow-Methods: GET, OPTIONS");
@@ -84,39 +106,61 @@ class Api extends CI_Controller {
             echo json_encode($response,TRUE);
          }else{
 
-            //get voucher game
-            $vf = $this->games_model->game_voucher();
-            $game_voucher = $vf['voucher'];
+            if($gameID != 3){
+                //get voucher game
+                $vf = $this->games_model->game_voucher();
+                $game_voucher = $vf['voucher'];
 
-         if($score < 100){
-            $response['status'] = 'failed';
-            $response['message'] = 'score failed < 100 poin';
-            header('Content-Type: application/json');
-            echo json_encode($response,TRUE);
-         }else{
+                $data = array(
 
-            $data = array(
+                    'game_token'     => $tokenID,
+                    'game_id'        => $gameID,
+                    'game_score'     => $score,
+                    'game_voucher'   => $game_voucher,
+                    'game_status'    => '0',
+                    'game_reward'    => '1'
 
-                'game_token'     => $tokenID,
-                'game_id'        => $gameID,
-                'game_score'     => $score,
-                'game_voucher'   => $game_voucher
-                'game_score'     => $score
+                );
 
-            );
+                $result = $this->games_model->game_update_score($gameID, $data);
 
-            $result = $this->games_model->game_update_score($gameID, $data);
+                    $response['status'] = 'success';
+                    $response['message'] = 'score entry';
+                    $response['token_id'] = $tokenID;
+                    $response['game_id'] = $gameID;
+                    $response['score'] = $score;
+                    header('Content-Type: application/json');
+                    header('Access-Control-Allow-Origin: *');
+                    header("Access-Control-Allow-Methods: GET, OPTIONS");
+                    header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
+                    echo json_encode($response,TRUE);
+            }else{
+                    //update reward
+                    $data = array(
 
-                $response['status'] = 'success';
-                $response['message'] = 'score entry';
-                $response['token_id'] = $tokenID;
-                $response['game_id'] = $gameID;
-                $response['score'] = $score;
-                header('Content-Type: application/json');
-                header('Access-Control-Allow-Origin: *');
-                header("Access-Control-Allow-Methods: GET, OPTIONS");
-                header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
-                echo json_encode($response,TRUE);
+                            'game_token'     => $tokenID,
+                            'game_id'        => $gameID,
+                            'game_score'     => $score,
+                            'game_status'    => '0',
+                            'game_reward'    => '0'
+
+                            );
+
+                    $result = $this->games_model->game_update_score($gameID, $data);
+                    //
+                    $response['status'] = 'failed';
+                    $response['message'] = 'token false';
+                    $response['token_id'] = $tokenID;
+                    $response['game_id'] = $gameID;
+                    $response['score'] = $score;
+                    header('Content-Type: application/json');
+                    header('Access-Control-Allow-Origin: *');
+                    header("Access-Control-Allow-Methods: GET, OPTIONS");
+                    header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
+                    echo json_encode($response,TRUE);
+            }
+
+            
 
         }
 

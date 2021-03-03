@@ -39,7 +39,27 @@
       "autoWidth": false,
       "responsive": true,
     });
+
+    //Date range picker
+    $('#reservationdate').datetimepicker({
+        format: 'DD-MM-YYYY'
+    });
+
+    $('#start').datetimepicker({
+      format: 'HH:mm:ss'
+    });
+
+    $('#end').datetimepicker({
+      format: 'HH:mm:ss'
+    });
+
+    $('#duration').datetimepicker({
+      format: 'HH:mm:ss'
+    });
+
   });
+
+  
 
 </script>
 

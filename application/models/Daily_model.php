@@ -60,7 +60,8 @@ function daily_list()
 
 		$q = $this->db->select('a.*')
 				
-		->from('visitor_daily a');			
+		->from('visitor_daily a')
+		->order_by('a.vd_id DESC');			
 					
 		$result = $q->get()->result();
 		return $result;
@@ -73,7 +74,8 @@ function daily_history()
 
 		$q = $this->db->select('a.*')
 				
-		->from('visitor_daily_history a');			
+		->from('visitor_daily_history a')
+		->order_by('a.vh_id DESC');			
 					
 		$result = $q->get()->result();
 		return $result;

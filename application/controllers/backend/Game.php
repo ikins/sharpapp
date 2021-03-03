@@ -39,5 +39,6 @@ class Game extends CI_Controller {
 		$data['main_content'] = 'backend/'.$this->ctrl.'/main';
 		$data['list'] = $this->games_model->g_list();
 		$this->load->view('template/backend/view', $data);
+		
 	}
 }
