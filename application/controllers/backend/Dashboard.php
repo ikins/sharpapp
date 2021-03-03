@@ -55,6 +55,15 @@ class Dashboard extends CI_Controller {
 		//print_r(json_encode($list));
 		$data['list'] = json_encode($list);
 		$data['history'] = $this->daily_model->daily_history();
+		//daily visitor
+		$daily = $this->daily_model->daily_count();
+		$data['count_all_daily'] = $daily['count_all'];
+		//product visitor
+		$product = $this->product_model->product_count_all();
+		$data['count_all_product'] = $product['count_all'];
+		//buy visitor
+		$buy = $this->buy_model->buy_count_all();
+		$data['count_all_buyt'] = $buy['count_all'];
 		$this->load->view('template/backend/view', $data);
 
 		//echo "Cookie : ".get_cookie('cookie_name');

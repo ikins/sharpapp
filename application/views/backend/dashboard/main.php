@@ -23,7 +23,7 @@
               <div class="info-box-content">
                 <span class="info-box-text">Daily Visitor</span>
                 <span class="info-box-number">
-                  10
+                  <?php echo $count_all_daily; ?>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -37,7 +37,9 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Product Visitor</span>
-                <span class="info-box-number">41</span>
+                <span class="info-box-number">
+                  <?php echo $count_all_product; ?>
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>

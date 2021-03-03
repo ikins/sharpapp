@@ -158,4 +158,15 @@ function product_list_graph($date)
 		return $result;
 	}
 
+function product_count_all()
+	{
+		$q_all = $this->db->select('COUNT(*) as product', FALSE)
+		->from('visitor_product a');
+
+		$tmp_all = $q_all->get()->result();
+
+		$result['count_all'] = $tmp_all[0]->product;
+		return $result;
+	}	
+
 }

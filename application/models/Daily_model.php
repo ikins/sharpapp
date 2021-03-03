@@ -80,6 +80,17 @@ function daily_history()
 		$result = $q->get()->result();
 		return $result;
 
-	}		
+	}	
+
+function daily_count()
+	{
+		$q_all = $this->db->select('COUNT(*) as daily', FALSE)
+		->from('visitor_daily a');
+
+		$tmp_all = $q_all->get()->result();
+
+		$result['count_all'] = $tmp_all[0]->daily;
+		return $result;
+	}	
 
 }
