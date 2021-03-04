@@ -51,6 +51,13 @@
                       </div>
                     </div>
                     <div class="form-group">
+                      <label for="validationCustom01">Kuota</label>
+                      <input type="text" name="quota" value="<?= $row->v_quota; ?>" class="form-control" id="validationCustom01" placeholder="Kuota" required>
+                      <div class="invalid-feedback">
+                        Silahkan isi Kuota Perhari.
+                      </div>
+                    </div>
+                    <div class="form-group">
                       <label for="validationCustom01">Status</label>
                       <select class="custom-select" name="status" required>
                         <option value="0" <?php if($row->v_status == "0") : echo 'selected'; endif; ?>>Suspended</option>

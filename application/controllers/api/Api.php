@@ -8,6 +8,14 @@ class Api extends CI_Controller {
 
     public function __construct() {
 
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        $method = $_SERVER['REQUEST_METHOD'];
+        if($method == "OPTIONS") {
+            die();
+        }
+        
         parent::__construct();
 
         $this->load->library('user_agent');
@@ -44,10 +52,6 @@ class Api extends CI_Controller {
             $response['message'] = 'user true';
             $response['game_id'] = 3;
             $response['token_id'] = 'SG000001';
-            header('Content-Type: application/json');
-            header('Access-Control-Allow-Origin: *');
-            header("Access-Control-Allow-Methods: GET, OPTIONS");
-            header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
             echo json_encode($response,TRUE);
         }else{
             foreach ($results as $row) {
@@ -62,10 +66,6 @@ class Api extends CI_Controller {
                 $response['message'] = 'user true';
                 $response['game_id'] = $row->game_id;
                 $response['token_id'] = $row->game_token;
-                header('Content-Type: application/json');
-                header('Access-Control-Allow-Origin: *');
-                header("Access-Control-Allow-Methods: GET, OPTIONS");
-                header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
                 echo json_encode($response,TRUE);
             }
             
@@ -75,7 +75,7 @@ class Api extends CI_Controller {
 
     public function endGame()
     {   
-        
+        header('Access-Control-Allow-Origin: *');
         //
         $data = (array)json_decode(file_get_contents('php://input'));
         $tokenID = $data['tokenID'];
@@ -83,7 +83,7 @@ class Api extends CI_Controller {
         $score = $data['score'];
 
         //check score
-         if($score < 100){
+         if($score < 75){
             //update reward
             $data = array(
 
@@ -99,10 +99,6 @@ class Api extends CI_Controller {
             //
             $response['status'] = 'failed';
             $response['message'] = 'score failed';
-            header('Content-Type: application/json');
-            header('Access-Control-Allow-Origin: *');
-            header("Access-Control-Allow-Methods: GET, OPTIONS");
-            header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
             echo json_encode($response,TRUE);
          }else{
 
@@ -129,10 +125,6 @@ class Api extends CI_Controller {
                     $response['token_id'] = $tokenID;
                     $response['game_id'] = $gameID;
                     $response['score'] = $score;
-                    header('Content-Type: application/json');
-                    header('Access-Control-Allow-Origin: *');
-                    header("Access-Control-Allow-Methods: GET, OPTIONS");
-                    header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
                     echo json_encode($response,TRUE);
             }else{
                     //update reward
@@ -153,10 +145,6 @@ class Api extends CI_Controller {
                     $response['token_id'] = $tokenID;
                     $response['game_id'] = $gameID;
                     $response['score'] = $score;
-                    header('Content-Type: application/json');
-                    header('Access-Control-Allow-Origin: *');
-                    header("Access-Control-Allow-Methods: GET, OPTIONS");
-                    header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
                     echo json_encode($response,TRUE);
             }
 

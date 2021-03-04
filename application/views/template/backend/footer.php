@@ -38,6 +38,10 @@
       "info": true,
       "autoWidth": false,
       "responsive": true,
+      dom: 'Bfrtip',
+        buttons: [
+            'excel'
+        ]
     });
 
     //Date range picker

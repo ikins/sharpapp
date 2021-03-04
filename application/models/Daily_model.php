@@ -85,7 +85,7 @@ function daily_history()
 function daily_count()
 	{
 		$q_all = $this->db->select('COUNT(*) as daily', FALSE)
-		->from('visitor_daily a');
+		->from('visitor_daily_history a');
 
 		$tmp_all = $q_all->get()->result();
 

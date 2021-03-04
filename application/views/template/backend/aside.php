@@ -88,22 +88,6 @@
                   <p>Visitor Daily History</p>
                 </a>
           </li>
-          <li class="nav-item">
-            <a href="<?= base_url(); ?>dashboard/visitor-feedback" class="nav-link">
-              <i class="nav-icon fas fa-list-ol"></i>
-              <p>
-                Visitor Feedback
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="<?= base_url(); ?>dashboard/visitor-game" class="nav-link">
-              <i class="nav-icon fas fa-list-ol"></i>
-              <p>
-                Visitor Game
-              </p>
-            </a>
-          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

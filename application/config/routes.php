@@ -33,6 +33,7 @@ $route['games/play'] = 'frontend/games/play';
 $route['games/success'] = 'frontend/games/success';
 $route['games/failed'] = 'frontend/games/failed';
 $route['games/check'] = 'frontend/games/check';
+$route['games/quota'] = 'frontend/games/quota';
 
 //Feedback
 $route['feedback/form'] = 'frontend/feedback/feedback_form';
@@ -49,6 +50,7 @@ $route['feedback/save'] = 'frontend/feedback/feedback_save';
 $route['feedback/results'] = 'frontend/feedback/feedback_results';
 $route['feedback/share'] = 'frontend/feedback/feedback_share';
 $route['feedback/share/results'] = 'frontend/feedback/feedback_share_results';
+$route['feedback/quota'] = 'frontend/feedback/feedback_quota';
 
 $route['feedback/sample'] = 'frontend/feedback/feedback_sample';
 

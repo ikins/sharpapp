@@ -9,10 +9,20 @@ class Games extends CI_Controller {
 
 	public function __construct()
 	{
+		header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        $method = $_SERVER['REQUEST_METHOD'];
+        if($method == "OPTIONS") {
+            die();
+        }
+
 		parent::__construct();
 
 		$this->load->library('user_agent');
-
+		//
+		$this->load->library('email');
+        $this->load->config('email');
 		//Session
 		$this->load->library('session');
 		
@@ -51,6 +61,7 @@ class Games extends CI_Controller {
 			'game_phone' 	=> $phone,
 			'game_token' 	=> $token_id,
 			'game_ip' 		=> $ip,
+			'game_date' 	=> date('Y-m-d'),
 
 		);
 		$result = $this->games_model->game_register($data);
@@ -112,23 +123,89 @@ class Games extends CI_Controller {
 
 	}
 
+	public function quota()
+	{
+		$data['title'] = 'Sharp Games Kuota Terpenuhi';						
+		$data['main_content'] = 'frontend/games/quota';
+		$this->load->view('template/frontend/view', $data);
+
+	}
+
 	//
 	public function check()
 	{
+        //
 		$game_id 	= $this->input->get('gameID');
 		$token_id 	= $this->input->get('tokenID');
 		$score 	= $this->input->get('score');
+		//
+		$today = date('Y-m-d');
 
-		//check games
-		$result = $this->games_model->g_check($game_id);
-		foreach ($result as $row) {
-			$reward = $row->game_reward;
-			if($reward == '1'){
-				redirect('games/success');
-			}else{
-				redirect('games/failed');	
+		// voucher
+		$vf = $this->games_model->g_voucher();
+		$game_voucher = $vf['voucher'];
+		$game_quota = $vf['quota'];
+		
+		//check pembatasan kuota penerima voucher game
+		$kuota = $this->games_model->g_kuota($today);
+		$kuota_today = $kuota['count_kuota'];
+		//
+		//echo $kuota_today;
+		//25 email pertama statur dapet reward
+		if($kuota_today > $game_quota){
+			//kuota sudah terpenuhi
+			redirect('games/quota');
+		}else{
+			//kirim email
+			///---------------------------------------
+
+			//check games
+			$result = $this->games_model->g_check($game_id);
+			foreach ($result as $row) {
+				//
+				$game_email = $row->game_email;
+				//
+				$reward = $row->game_reward;
+				if($reward == '1'){
+
+					//send email
+					$from 	= "sharpvirtualexhibition.id <hello@sharpvirtualexhibition.id>";
+					$_from 	= "hello@sharpvirtualexhibition.id";
+					$_me 	= "Sharp Virtual Exhibition";
+
+			        $subject = 'Sharp Virtual Exhibition | Game | Voucher';
+
+			        $data['_voucher'] = $game_voucher;
+			        //
+			        $email_body = $this->load->view('template/email/game', $data, true);
+
+			        $this->email->set_newline("\r\n");
+			        $this->email->from($from);
+			        $this->email->to($game_email);
+			        $this->email->subject($subject);
+			        $this->email->message($email_body);
+			        $this->email->set_mailtype("html");
+			        $this->email->reply_to($_from, $_me);
+
+			        //
+			        if ($this->email->send()) {
+			            redirect('games/success');
+			        }else{
+			        	// echo 'failed <br>';
+			        	// echo $reward."<br>";
+			        	// echo $game_voucher."<br>";
+			        	// echo $game_email."<br>";
+			        	redirect('games/success');
+			        	//echo  $this->email->print_debugger();
+			        }
+					//
+					
+				}else{
+					redirect('games/failed');	
+				}
 			}
 		}
+		
 
 	}
 

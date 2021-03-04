@@ -30,6 +30,7 @@
                       <th>Voucher Code</th>
                       <th>Category</th>
                       <th>Status</th>
+                      <th>Kuota</th>
                       <th>Date</th>
                       <th>#</th>
                     </tr>
@@ -72,6 +73,7 @@
                       <td><?php echo $rows->v_code; ?></td>
                       <td><?php echo $v_cat; ?></td>
                       <td><?php echo $v_stat; ?></td>
+                      <td><?php echo $rows->v_quota; ?></td>
                       <td><?php echo date('d M Y h:i', strtotime($rows->v_date)); ?></td>
                       <td><a href="<?= base_url(); ?>dashboard/voucher/edit/<?= $rows->v_id ?>" class="btn btn-primary" style="color: #fff;"><i class="fas fa-edit"></i> Edit</a>
                       </td>

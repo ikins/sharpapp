@@ -207,7 +207,7 @@
                     ?>
                     <tr>
                       <td><?php echo $i; ?></td>
-                      <td><?php echo date('d M Y h:i', strtotime($rows->fb_date)); ?></td>
+                      <td><?php echo date('d M Y h:i', strtotime($rows->fb_time)); ?></td>
                       <td><?php echo $rows->fb_name; ?></td>
                       <td><?php echo $rows->fb_email; ?></td>
                       <td><?php echo $rows->fb_phone; ?></td>
