@@ -3,7 +3,7 @@
 	  <div class="row justify-content-center">
 	    <div class="col-md-8">
 	      <div class="form-group m-t-20">
-                    <label for="validationCustom01" class="title-question text-center">Mohon maaf, Kuota Penerima Voucher Feedback Hari ini sudah terpenuhi, silahkan dicoba kembali besok.</label>
+                  <label for="validationCustom01" class="title-question text-center">Mohon maaf, Kuota Penerima Voucher Feedback Hari ini sudah terpenuhi, silahkan dicoba kembali besok.</label>
                   </div>
 	    </div>
 	    <div class="col-md-8 text-center set-failed-button" style="margin-top: 50px;">

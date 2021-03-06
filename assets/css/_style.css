@@ -20,23 +20,6 @@ button.btn.btn-danger {
     font-family: 'tomkin' !important;
 }
 
-.arrows {
-    position: fixed;
-}
-
-.left-arrows {
-    position: relative;
-    width: 150px;
-    top: 12rem;
-}
-
-.right-arrows {
-    position: relative;
-    width: 150px;
-    top: 3rem;
-    left: 70rem;
-}
-
 #welcomevideo {
     position: fixed;
     top: 0;
@@ -46,15 +29,10 @@ button.btn.btn-danger {
     width: 100% !important;
     height: auto !important;
     z-index: -1;
-    overflow: hidden;
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
     -o-transition: all 1s;
     transition: all 1s;
-}
-
-.vid {
-    position: relative;
 }
 
 .kuula {
@@ -144,14 +122,9 @@ li.nav-item.active {
 #menu .menu-link {
     position: absolute;
     z-index: 100;
-    left: 70rem;
+    left: 72rem;
     top: 15px;
     width: 200px;
-}
-
-.txt_fd {
-    position: fixed;
-    left: 54.5rem;
 }
 
 @media (max-width: 1440px) {
@@ -160,62 +133,18 @@ li.nav-item.active {
     }
 }
 
-div#vb-kGZpMxLJ {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    margin-top: unset;
-}
-
 @media (max-width: 440px) {
-    div#vb-kGZpMxLJ {
-        position: fixed;
-        margin-top: 10rem !important;
-    }
-    /* new */
-    button {
-        left: -8px !important;
-        top: -45px !important;
-    }
-    .left-arrows {
-        width: 120px !important;
-        top: 24rem !important;
-    }
-    .right-arrows {
-        width: 120px !important;
-        top: 16rem !important;
-        left: 18rem !important;
-    }
-    .txt_fd {
-        left: 8rem !important;
-    }
-    img.icononframefd {
-        top: -0.5rem;
-        left: 4rem !important;
-    }
     #menu {
         width: 320px;
         margin-top: 0px;
     }
     #menu .menu-link {
-        left: 15rem;
+        left: 16rem;
         top: 15px;
         width: 170px;
     }
     .bg-light {
         background-color: transparent !important;
-    }
-    li.nav-item {
-        line-height: 30px !important;
-    }
-    li.nav-item {
-        background-color: #cbcbcb;
-        background-image: linear-gradient(#cbcbcb, #f4f4f4 70%);
-        margin-right: 5px;
-        border-radius: 15px 15px 15px 15px;
-        margin-bottom: 10px;
-        font-family: 'arlon';
-        color: #212020;
     }
     .fixed-bottom {
         margin: unset;
@@ -235,99 +164,10 @@ div#vb-kGZpMxLJ {
     img.buy-btn {
         width: 130px !important;
     }
-    img.skip {
-        width: 130px !important;
-        top: 10rem !important;
-    }
-    .bg-register-form {
-        background-size: 300px 200px !important;
-    }
-    form.needs-validation.bg-register-form.m-t-50 {
-        margin-top: -150px;
-    }
-    form.needs-validation.bg-register-form.m-t-50 {
-        margin-top: -150px;
-        position: relative;
-        left: 30px;
-    }
-    .set-margin-button-feedback {
-        margin-top: 5px !important;
-        margin-right: 50px !important;
-    }
-    .bg-question-form {
-        background-image: unset !important;
-    }
-    .col-12.from-qs-1 {
-        left: 0.2rem !important;
-        top: 18rem !important;
-    }
-    .col-12.from-qs-6 {
-        position: fixed;
-        left: 0rem !important;
-        top: 12rem !important;
-        line-height: 28px !important;
-    }
-    .row.fq_6 {
-        position: fixed;
-        left: 8rem !important;
-    }
-    .btn-feedback {
-        left: 11rem !important;
-        top: 32rem !important;
-    }
-    .btn-feedback-note {
-        left: 11rem !important;
-        top: 34rem !important;
-    }
-    .btn-feedback-note-8 {
-        left: 11rem !important;
-        top: 34rem !important;
-    }
-    .col-md-12.tq {
-        left: 0rem !important;
-    }
-    .col-md-6.col-xs-12.img-game {
-        top: 15rem !important;
-        left: -3.5rem !important;
-    }
-    .col-md-6.col-xs-12.form-game {
-        top: 12.5rem !important;
-        left: -0.5rem !important;
-    }
-    .set-margin-button {
-        margin-top: -4px !important;
-        margin-right: 55px !important;
-    }
-    img.img-fluid.success-game {
-        top: 16rem !important;
-        left: 0rem !important;
-    }
-    a.btn.btn-danger.back-home {
-        top: 26rem !important;
-        left: 9rem !important;
-    }
-    .set-failed-button {
-        margin-top: 7rem !important;
-        margin-left: 1rem !important;
-    }
-    .container-game {
-        background-image: unset !important;
-        background-color: #000000;
-    }
-    .bg-game {
-        background-image: unset !important;
-    }
 }
 
 img.icononframe {
     width: 50px !important;
-}
-
-img.icononframefd {
-    width: 200px !important;
-    position: fixed;
-    top: -0.5rem;
-    left: 60rem;
 }
 
 .container-product {
@@ -375,14 +215,7 @@ img.icononframefd {
 }
 
 img.buy-btn {
-    width: 130px !important;
-}
-
-img.skip {
     width: 200px;
-    position: fixed;
-    top: 30rem;
-    right: 1rem;
 }
 
 
@@ -423,17 +256,6 @@ img.skip {
 ::placeholder {
     text-transform: uppercase;
     color: #ef4951 !important;
-}
-
-.col-md-6.col-xs-12.img-game {
-    position: relative;
-    top: 16rem;
-    left: -3rem;
-}
-
-.col-md-6.col-xs-12.form-game {
-    position: relative;
-    top: 8.5rem;
 }
 
 
@@ -522,76 +344,6 @@ img.skip {
 ::placeholder {
     text-transform: uppercase;
     color: #ef4951 !important;
-}
-
-
-/* new feedback */
-
-.container-feedback {
-    position: fixed;
-    background-image: url('../images/bg_frame.png');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-}
-
-.container-game {
-    position: fixed;
-    background-image: url('../images/bg_frame.png');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-}
-
-.feedback {
-    width: 100%;
-    height: 100vh;
-    border: none;
-}
-
-.feedback .bg_feedback {
-    position: fixed;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    box-sizing: border-box;
-    background: url("../../assets/images/bg.png")center center no-repeat;
-    background-size: contain;
-    /* on modal */
-    padding: 0.5% 5.8% 5.6%;
-    /* padding: 0.5% 12.8% 4.8%; */
-    /* on modal */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-}
-
-@media (max-width: 440px) {
-    .feedback .bg_feedback {
-        background-size: cover !important;
-    }
-}
-
-img.img-fluid.success-game {
-    position: fixed;
-    width: 50rem;
-    top: 5rem;
-    left: 15rem;
-}
-
-a.btn.btn-danger.back-home {
-    position: fixed;
-    top: 25rem;
-    left: 36rem;
 }
 
 
@@ -694,23 +446,14 @@ input[type="number"] {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100vh;
-}
-
-img.img-fluid.game-reg {
-    width: 80%;
-    position: absolute;
-    top: -5rem;
-    left: 6rem;
+    height: 100%;
 }
 
 .bg-register-form {
     background-image: url("../../assets/images/games/bg-form-register.png");
     background-repeat: no-repeat;
-    background-size: 430px 200px;
+    background-size: 250px 200px;
 }
 
 .bg-play-game {
@@ -766,8 +509,7 @@ img.img-fluid.game-reg {
 }
 
 .set-failed-button {
-    margin-top: 15rem;
-    margin-left: unset;
+    margin-top: -90px;
 }
 
 
@@ -784,7 +526,7 @@ img.img-fluid.game-reg {
     height: 100%;
 }
 
-.content-feedback {
+.content-feedback{
     margin-left: 120px;
     margin-right: 80px;
 }
@@ -801,7 +543,7 @@ img.img-fluid.game-reg {
     padding-top: 50px;
 }
 
-.set-margin-button-feedback {
+.set-margin-button-feedback{
     margin-top: -40px;
     margin-right: 40px;
 }
@@ -809,27 +551,11 @@ img.img-fluid.game-reg {
 .bg-question-form {
     background-image: url("../../assets/images/feedback/bg-question.png");
     background-repeat: no-repeat;
-    background-size: 50rem 23rem;
-    position: relative;
-    top: 6rem;
-    left: 5.2rem;
+    background-size: 500px 250px;
 }
 
-.col-12.from-qs-1 {
-    position: fixed;
-    left: 0rem;
-    top: 12rem;
-}
-
-.col-12.from-qs-6 {
-    position: fixed;
-    left: 21rem;
-    top: 12rem;
-    line-height: unset;
-}
-
-.bg-thanks {
-    /* background-image: url("../../assets/images/feedback/thanks.png"); */
+.bg-thanks{
+    background-image: url("../../assets/images/feedback/thanks.png");
     background-repeat: no-repeat;
     background-size: 500px 250px;
 }
@@ -841,21 +567,21 @@ img.img-fluid.game-reg {
     padding: 25px;
 }
 
-.label-feedback {
+.label-feedback{
     font-size: 16px;
-    color: #fff;
+    color: #fff; 
     text-transform: uppercase;
 }
 
-.label-feedback-product {
+.label-feedback-product{
     font-size: 12px;
-    color: #fff;
+    color: #fff; 
     text-transform: uppercase;
 }
 
-.label-feedback-q8 {
+.label-feedback-q8{
     font-size: 18px;
-    color: #fff;
+    color: #fff; 
 }
 
 .label-feedback {
@@ -876,30 +602,23 @@ img.img-fluid.game-reg {
     text-transform: uppercase;
 }
 
+.btn-feedback{
+    margin-top: -20px;
+}
+
+.btn-feedback-note{
+    margin-top: -50px;
+}
+
+.btn-feedback-thanks{
+    margin-top: -50px;
+}
+
 .btn-feedback {
-    position: fixed;
-    left: 38rem;
-    top: 20.5rem;
+    margin-top: -20px;
 }
 
 .btn-feedback-note {
-    position: fixed;
-    left: 38rem;
-    top: 21.5rem;
-}
-
-.btn-feedback-note-8 {
-    position: fixed;
-    left: 38rem;
-    top: 22.5rem;
-}
-
-.col-md-12.tq {
-    position: fixed;
-    left: 17rem;
-}
-
-.btn-feedback-thanks {
     margin-top: -50px;
 }
 
@@ -984,21 +703,6 @@ div.dataTables_wrapper div.dataTables_filter {
     padding-right: 10px;
 }
 
-.framemobile {
-    background-color: #000000;
-}
-
-.bg-game {
-    position: fixed;
-    background-image: url('../images/bg_games.png');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    width: 100%;
-    height: 100vh;
-}
-
 
 /* ==========================================================================
    MEDIA
@@ -1016,5 +720,10 @@ div.dataTables_wrapper div.dataTables_filter {
     }
     .set-padding-top {
         padding-top: 100px;
+    }
+    .bg-register-form {
+        background-image: url("../../assets/images/games/bg-form-register.png");
+        background-repeat: no-repeat;
+        background-size: 453px 263px;
     }
 }

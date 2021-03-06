@@ -1,8 +1,12 @@
-<div class="bg-feedback set-question-top">
-  <div class="container">
-    <div class="row set-padding justify-content-center m-l-5">
-      <div class="col-md-10">
-          <form action="<?= base_url(); ?>feedback/save" method="post" class="needs-validation bg-question-form" novalidate>
+<div class="container-feedback">
+  <div class="feedback">
+      <div class="bg_feedback">
+        <div class="container">
+          <div class="bg-question-form">
+            <div class="row d-flex h-100 justify-content-center">
+              <div class="col-12 from-qs-1">
+              <div class="col-md-12">
+              <form action="<?= base_url(); ?>feedback/save" method="post" class="needs-validation" novalidate>
             <input type="hidden" name="fb_name" value="<?php echo $fb_name; ?>">
             <input type="hidden" name="fb_email" value="<?php echo $fb_email; ?>">
             <input type="hidden" name="fb_phone" value="<?php echo $fb_phone; ?>">
@@ -24,11 +28,14 @@
                     <textarea name="fb_q9" class="form-control" cols="55" rows="3"></textarea>
                   </div>
                 </div>
-                <div class="btn-feedback-note text-center">
+                <div class="btn-feedback-note-8 text-center">
                   <button type="submit" class="btn btn-danger">SUBMIT</button>
                 </div>
-          </form>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
+  </div>
 </div>

@@ -8,7 +8,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
      	<div class="embed-responsive embed-responsive-16by9">
-           <iframe class="embed-responsive-item" src="<?php echo base_url(); ?>feedback/form" allowfullscreen></iframe>
+           <iframe class="embed-responsive-item" src="http://localhost:7777/project/business/sharp/sharpapp/feedback/form" allowfullscreen></iframe>
         </div>
     </div>
   </div>

@@ -165,4 +165,29 @@ function g_kuota($today)
 		return $result;
 	}
 
+function g_email_user($game_id){
+
+		$q_email = $this->db->select('a.game_email as email', FALSE)
+			->from('game a')
+			->where('a.game_id',$game_id);
+
+			$tmp_email = $q_email->get()->result();
+
+		$result['email'] = $tmp_email[0]->email;
+		return $result;
+	}
+
+function g_count_v($game_email){
+
+		$q_email = $this->db->select('COUNT(*) as voucher', FALSE)
+			->from('game a')
+			->where('a.game_email',$game_email)
+			->where('a.game_reward', '1');
+
+			$tmp_email = $q_email->get()->result();
+
+		$result['count_v'] = $tmp_email[0]->voucher;
+		return $result;
+	}
+
 }

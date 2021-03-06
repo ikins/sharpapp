@@ -1,8 +1,11 @@
-<div class="bg-feedback set-question-top">
-  <div class="container">
-    <div class="row set-padding justify-content-center m-l-5">
-      <div class="col-md-10">
-          <form action="<?= base_url(); ?>feedback/question-6" method="post" class="needs-validation bg-question-form" novalidate>
+<div class="container-feedback">
+  <div class="feedback">
+      <div class="bg_feedback">
+        <div class="container">
+          <div class="bg-question-form">
+            <div class="row d-flex h-100 justify-content-center">
+              <div class="col-12 from-qs-1">
+              <form action="<?= base_url(); ?>feedback/question-6" method="post" class="needs-validation" novalidate>
             <input type="hidden" name="fb_name" value="<?php echo $fb_name; ?>">
             <input type="hidden" name="fb_email" value="<?php echo $fb_email; ?>">
             <input type="hidden" name="fb_phone" value="<?php echo $fb_phone; ?>">
@@ -45,7 +48,10 @@
                   <button type="submit" class="btn btn-danger">NEXT</button>
                 </div>
           </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
+  </div>
 </div>

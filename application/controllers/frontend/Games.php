@@ -131,6 +131,14 @@ class Games extends CI_Controller {
 
 	}
 
+	public function limit()
+	{
+		$data['title'] = 'Sharp Games Kuota Limit';						
+		$data['main_content'] = 'frontend/games/limit';
+		$this->load->view('template/frontend/view', $data);
+
+	}
+
 	//
 	public function check()
 	{
@@ -141,70 +149,83 @@ class Games extends CI_Controller {
 		//
 		$today = date('Y-m-d');
 
-		// voucher
-		$vf = $this->games_model->g_voucher();
-		$game_voucher = $vf['voucher'];
-		$game_quota = $vf['quota'];
-		
-		//check pembatasan kuota penerima voucher game
-		$kuota = $this->games_model->g_kuota($today);
-		$kuota_today = $kuota['count_kuota'];
+		//check kuota peruser mak 2 voucher
+		$user = $this->games_model->g_email_user($game_id);
+		$game_email = $user['email'];
+		//echo $game_email;
 		//
-		//echo $kuota_today;
-		//25 email pertama statur dapet reward
-		if($kuota_today > $game_quota){
-			//kuota sudah terpenuhi
-			redirect('games/quota');
+		$count_v = $this->games_model->g_count_v($game_email);
+		$count_voucher = $count_v['count_v'];
+		//echo $count_voucher;
+		if($count_voucher >= 2){
+			redirect('games/limit');
 		}else{
-			//kirim email
-			///---------------------------------------
+			// voucher
+			$vf = $this->games_model->g_voucher();
+			$game_voucher = $vf['voucher'];
+			$game_quota = $vf['quota'];
+			
+			//check pembatasan kuota penerima voucher game
+			$kuota = $this->games_model->g_kuota($today);
+			$kuota_today = $kuota['count_kuota'];
+			//
+			//echo $kuota_today;
+			//25 email pertama statur dapet reward
+			if($kuota_today > $game_quota){
+				//kuota sudah terpenuhi
+				redirect('games/quota');
+			}else{
+				//kirim email
+				///---------------------------------------
 
-			//check games
-			$result = $this->games_model->g_check($game_id);
-			foreach ($result as $row) {
-				//
-				$game_email = $row->game_email;
-				//
-				$reward = $row->game_reward;
-				if($reward == '1'){
-
-					//send email
-					$from 	= "sharpvirtualexhibition.id <hello@sharpvirtualexhibition.id>";
-					$_from 	= "hello@sharpvirtualexhibition.id";
-					$_me 	= "Sharp Virtual Exhibition";
-
-			        $subject = 'Sharp Virtual Exhibition | Game | Voucher';
-
-			        $data['_voucher'] = $game_voucher;
-			        //
-			        $email_body = $this->load->view('template/email/game', $data, true);
-
-			        $this->email->set_newline("\r\n");
-			        $this->email->from($from);
-			        $this->email->to($game_email);
-			        $this->email->subject($subject);
-			        $this->email->message($email_body);
-			        $this->email->set_mailtype("html");
-			        $this->email->reply_to($_from, $_me);
-
-			        //
-			        if ($this->email->send()) {
-			            redirect('games/success');
-			        }else{
-			        	// echo 'failed <br>';
-			        	// echo $reward."<br>";
-			        	// echo $game_voucher."<br>";
-			        	// echo $game_email."<br>";
-			        	redirect('games/success');
-			        	//echo  $this->email->print_debugger();
-			        }
+				//check games
+				$result = $this->games_model->g_check($game_id);
+				foreach ($result as $row) {
 					//
-					
-				}else{
-					redirect('games/failed');	
+					$game_email = $row->game_email;
+					//
+					$reward = $row->game_reward;
+					if($reward == '1'){
+
+						//send email
+						$from 	= "sharpvirtualexhibition.id <hello@sharpvirtualexhibition.id>";
+						$_from 	= "hello@sharpvirtualexhibition.id";
+						$_me 	= "Sharp Virtual Exhibition";
+
+				        $subject = 'Sharp Virtual Exhibition | Game | Voucher';
+
+				        $data['_voucher'] = $game_voucher;
+				        //
+				        $email_body = $this->load->view('template/email/game', $data, true);
+
+				        $this->email->set_newline("\r\n");
+				        $this->email->from($from);
+				        $this->email->to($game_email);
+				        $this->email->subject($subject);
+				        $this->email->message($email_body);
+				        $this->email->set_mailtype("html");
+				        $this->email->reply_to($_from, $_me);
+
+				        //
+				        if ($this->email->send()) {
+				            redirect('games/success');
+				        }else{
+				        	// echo 'failed <br>';
+				        	// echo $reward."<br>";
+				        	// echo $game_voucher."<br>";
+				        	// echo $game_email."<br>";
+				        	redirect('games/success');
+				        	//echo  $this->email->print_debugger();
+				        }
+						//
+						
+					}else{
+						redirect('games/failed');	
+					}
 				}
 			}
 		}
+			
 		
 
 	}

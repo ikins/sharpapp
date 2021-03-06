@@ -34,6 +34,7 @@ $route['games/success'] = 'frontend/games/success';
 $route['games/failed'] = 'frontend/games/failed';
 $route['games/check'] = 'frontend/games/check';
 $route['games/quota'] = 'frontend/games/quota';
+$route['games/limit'] = 'frontend/games/limit';
 
 //Feedback
 $route['feedback/form'] = 'frontend/feedback/feedback_form';
