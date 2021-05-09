@@ -14,7 +14,8 @@ function v_list()
 
 		$q = $this->db->select('a.*')
 				
-		->from('voucher a');			
+		->from('voucher a')
+		->order_by('a.v_id DESC');		
 					
 		$result = $q->get()->result();
 		return $result;

@@ -32,6 +32,9 @@ $route['games/save'] = 'frontend/games/save';
 $route['games/play'] = 'frontend/games/play';
 $route['games/success'] = 'frontend/games/success';
 $route['games/failed'] = 'frontend/games/failed';
+$route['games/check'] = 'frontend/games/check';
+$route['games/quota'] = 'frontend/games/quota';
+$route['games/limit'] = 'frontend/games/limit';
 
 //Feedback
 $route['feedback/form'] = 'frontend/feedback/feedback_form';
@@ -48,6 +51,7 @@ $route['feedback/save'] = 'frontend/feedback/feedback_save';
 $route['feedback/results'] = 'frontend/feedback/feedback_results';
 $route['feedback/share'] = 'frontend/feedback/feedback_share';
 $route['feedback/share/results'] = 'frontend/feedback/feedback_share_results';
+$route['feedback/quota'] = 'frontend/feedback/feedback_quota';
 
 $route['feedback/sample'] = 'frontend/feedback/feedback_sample';
 
@@ -76,6 +80,13 @@ $route['dashboard/visitor-product'] = 'backend/visitorproduct/main';
 $route['dashboard/visitor-feedback'] = 'backend/visitorfeedback/main';
 $route['dashboard/visitor-game'] = 'backend/visitorgame/main';
 $route['dashboard/photobooth'] = 'backend/photobooth/main';
+$route['dashboard/schedule'] = 'backend/schedule/main';
+$route['dashboard/schedule/add'] = 'backend/schedule/add';
+$route['dashboard/schedule/edit/(:any)'] = 'backend/schedule/edit';
+$route['dashboard/schedule/save'] = 'backend/schedule/save';
+$route['dashboard/schedule/status/(:any)/(:any)'] = 'backend/schedule/status';
 
 //sample code
-$route['reqip'] = 'backend/dashboard/reqip';
+//$route['reqip'] = 'backend/dashboard/reqip';
+//$route['sess'] = 'frontend/games/sess';
+

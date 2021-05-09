@@ -41,7 +41,8 @@ function event_list()
 	{	
 		$q = $this->db->select('a.*')
 				
-		->from('visitor_event_live a');			
+		->from('visitor_event_live a')
+		->order_by('a.vel_id DESC');		
 					
 		$result = $q->get()->result();
 		return $result;

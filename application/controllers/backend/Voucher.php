@@ -28,7 +28,7 @@ class Voucher extends CI_Controller {
 		
 		if(!isset($is_user_sharp) || $is_user_sharp != true)
 		{
-			redirect('/');
+			redirect('/login');
 		}	
 	}
 
@@ -59,6 +59,7 @@ class Voucher extends CI_Controller {
 			$v_code = $this->input->post('code');
 			$v_category = $this->input->post('category');
 			$v_status = $this->input->post('status');
+			$v_quota = $this->input->post('quota');
 			//
 			$data = array(
 
@@ -67,6 +68,7 @@ class Voucher extends CI_Controller {
 				'v_date'	=> date('Y-m-d h:i:s'),
 				'v_category'	=> $v_category,
 				'v_status'	=> $v_status,
+				'v_quota'	=> $v_quota,
 
 			);
 			$result = $this->voucher_model->v_edit($v_id, $data);
@@ -75,6 +77,7 @@ class Voucher extends CI_Controller {
 			$v_name = $this->input->post('name');
 			$v_code = $this->input->post('code');
 			$v_category = $this->input->post('category');
+			$v_quota = $this->input->post('quota');
 			//
 			$data = array(
 
@@ -82,6 +85,7 @@ class Voucher extends CI_Controller {
 				'v_code'	=> $v_code,
 				'v_status'	=> 1,
 				'v_category'	=> $v_category,
+				'v_quota'	=> $v_quota,
 				
 
 			);

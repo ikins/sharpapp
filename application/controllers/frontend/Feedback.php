@@ -13,12 +13,17 @@ class Feedback extends CI_Controller {
 
 		//Session
 		$this->load->library('session');
+        $this->load->library('email');
+        $this->load->config('email');
 		
 		//library
 		$this->load->library('user_agent');
 
 		//model
 		$this->load->model('feedback_model');
+
+		//
+		$this->load->helper('url');
 		
 	}
 
@@ -26,6 +31,13 @@ class Feedback extends CI_Controller {
 	{
 		$data['title'] = 'Feedback Form';						
 		$data['main_content'] = 'frontend/feedback/sample';
+		$this->load->view('template/frontend/view', $data);
+	}
+
+	public function feedback_quota()
+	{
+		$data['title'] = 'Feedback Form';						
+		$data['main_content'] = 'frontend/feedback/quota';
 		$this->load->view('template/frontend/view', $data);
 	}
 
@@ -261,6 +273,8 @@ class Feedback extends CI_Controller {
 
 	public function feedback_save()
 	{
+		$today = date('Y-m-d');
+		//
 		$fb_name = $this->input->post('fb_name');
 		$fb_email = $this->input->post('fb_email');
 		$fb_phone = $this->input->post('fb_phone');
@@ -275,6 +289,9 @@ class Feedback extends CI_Controller {
 		$fb_q8 = $this->input->post('fb_q8');
 		$fb_q9 = $this->input->post('fb_q9');
 		//
+		$vf = $this->feedback_model->fb_voucher();
+		$fb_voucher = $vf['voucher'];
+		$fb_quota = $vf['quota'];
 		//insert new ip
 		$data = array(
 
@@ -290,13 +307,47 @@ class Feedback extends CI_Controller {
 			'fb_question_7' 	=> $fb_q7,
 			'fb_question_8' 	=> $fb_q8,
 			'fb_question_9' 	=> $fb_q9,
+			'fb_date'			=> date('Y-m-d'),
+			'fb_voucher'		=> $fb_voucher
 
 		);
 		$result = $this->feedback_model->fb_add_feedback($data);
 
-		if($result){
-			redirect('feedback/results');
+		//check pembatasan kuota penerima voucher feedback
+		$kuota = $this->feedback_model->fb_kuota($today);
+		$kuota_today = $kuota['count_kuota'];
+
+		if($kuota_today > $fb_quota){
+			//kuota sudah terpenuhi
+			redirect('feedback/quota');
+		}else{
+			//send email
+			$from 	= "sharpvirtualexhibition.id <hello@sharpvirtualexhibition.id>";
+			$_from 	= "hello@sharpvirtualexhibition.id";
+			$_me 	= "Sharp Virtual Exhibition";
+
+	        $subject = 'Sharp Virtual Exhibition | Feedback Sharp | Voucher';
+
+	        $data['_voucher'] = $fb_voucher;
+	        //
+	        $email_body = $this->load->view('template/email/feedback', $data, true);
+
+	        $this->email->set_newline("\r\n");
+	        $this->email->from($from);
+	        $this->email->to($fb_email);
+	        $this->email->subject($subject);
+	        $this->email->message($email_body);
+	        $this->email->set_mailtype("html");
+	        $this->email->reply_to($_from, $_me);
+
+	        if ($this->email->send()) {
+	            redirect('feedback/results');
+	        }else{
+	        	redirect('feedback/results');
+	        }
 		}
+
+		
 	}
 
 	public function feedback_results()

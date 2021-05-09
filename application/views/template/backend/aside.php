@@ -13,6 +13,14 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
+            <a href="<?= base_url(); ?>dashboard/schedule" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                Schedule Shopee
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="<?= base_url(); ?>dashboard/voucher" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>
@@ -79,22 +87,6 @@
                   <i class="nav-icon fas fa-list-alt"></i>
                   <p>Visitor Daily History</p>
                 </a>
-          </li>
-          <li class="nav-item">
-            <a href="<?= base_url(); ?>dashboard/visitor-feedback" class="nav-link">
-              <i class="nav-icon fas fa-list-ol"></i>
-              <p>
-                Visitor Feedback
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="<?= base_url(); ?>dashboard/visitor-game" class="nav-link">
-              <i class="nav-icon fas fa-list-ol"></i>
-              <p>
-                Visitor Game
-              </p>
-            </a>
           </li>
         </ul>
       </nav>

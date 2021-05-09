@@ -74,7 +74,8 @@ function product_list()
 	{	
 		$q = $this->db->select('a.*')
 				
-		->from('visitor_product a');			
+		->from('visitor_product a')
+		->order_by('a.vp_id DESC');			
 					
 		$result = $q->get()->result();
 		return $result;
@@ -156,5 +157,16 @@ function product_list_graph($date)
 
 		return $result;
 	}
+
+function product_count_all()
+	{
+		$q_all = $this->db->select('COUNT(*) as product', FALSE)
+		->from('visitor_product a');
+
+		$tmp_all = $q_all->get()->result();
+
+		$result['count_all'] = $tmp_all[0]->product;
+		return $result;
+	}	
 
 }

@@ -23,7 +23,7 @@
               <div class="info-box-content">
                 <span class="info-box-text">Daily Visitor</span>
                 <span class="info-box-number">
-                  10
+                  <?php echo $count_all_daily; ?>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -37,7 +37,9 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Product Visitor</span>
-                <span class="info-box-number">41</span>
+                <span class="info-box-number">
+                  <?php echo $count_all_product; ?>
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -54,7 +56,9 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Buy Now Shopee</span>
-                <span class="info-box-number">7</span>
+                <span class="info-box-number">
+                  <?php echo $count_all_buy; ?>
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -70,9 +74,9 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                   <div class="inner">
-                    <h3>10</h3>
+                    <h3><?php echo $count_all_feedback; ?></h3>
 
-                    <p>Feedback Form</p>
+                    <p>Feedback All</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-bag"></i>
@@ -85,7 +89,7 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                   <div class="inner">
-                    <h3>2</h3>
+                    <h3><?php echo $count_voucher_game ?></h3>
 
                     <p>Games Voucher</p>
                   </div>
@@ -101,9 +105,9 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                   <div class="inner">
-                    <h3>5</h3>
+                    <h3><?php echo $count_today_feedback; ?></h3>
 
-                    <p>Feedback Visitor</p>
+                    <p>Feedback Today</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-bag"></i>
@@ -116,9 +120,9 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                   <div class="inner">
-                    <h3>5</h3>
+                    <h3><?php echo $count_today_game ?></h3>
 
-                    <p>Games Visitor</p>
+                    <p>Games Today</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-stats-bars"></i>
@@ -134,7 +138,7 @@
                   <div class="inner">
                     <h3>8</h3>
 
-                    <p>Stage</p>
+                    <p>Visitor Video Welcome</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-bag"></i>
@@ -147,9 +151,9 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                   <div class="inner">
-                    <h3>53</h3>
+                    <h3><?php echo $count_all_game; ?></h3>
 
-                    <p>Photobooth</p>
+                    <p>Game All</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-stats-bars"></i>

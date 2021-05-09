@@ -28,7 +28,7 @@ class Game extends CI_Controller {
 		
 		if(!isset($is_user_sharp) || $is_user_sharp != true)
 		{
-			redirect('/');
+			redirect('/login');
 		}	
 	}
 
@@ -39,5 +39,6 @@ class Game extends CI_Controller {
 		$data['main_content'] = 'backend/'.$this->ctrl.'/main';
 		$data['list'] = $this->games_model->g_list();
 		$this->load->view('template/backend/view', $data);
+		
 	}
 }

@@ -80,9 +80,21 @@ function buy_list()
 	{	
 		$q = $this->db->select('a.*')
 				
-		->from('visitor_buy a');			
+		->from('visitor_buy a')
+		->order_by('a.vb_id DESC');			
 					
 		$result = $q->get()->result();
+		return $result;
+	}
+
+function buy_count_all()
+	{
+		$q_all = $this->db->select('COUNT(*) as buy', FALSE)
+		->from('visitor_buy a');
+
+		$tmp_all = $q_all->get()->result();
+
+		$result['count_all'] = $tmp_all[0]->buy;
 		return $result;
 	}
 

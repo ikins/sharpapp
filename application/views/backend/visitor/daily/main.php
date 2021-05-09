@@ -34,7 +34,7 @@
                     <tr>
                       <td><?php echo $i; ?></td>
                       <td><?php echo $rows->vd_ip; ?></td>
-                      <td><?php echo date('d M Y H:i', strtotime($rows->vd_date)); ?></td>
+                      <td><?php echo date('d M Y H:i', strtotime($rows->vd_time)); ?></td>
                       <td><?php echo $rows->vd_hit; ?></td>
                     </tr>
                     <?php endforeach; ?>

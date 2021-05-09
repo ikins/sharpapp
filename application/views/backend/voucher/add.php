@@ -49,6 +49,13 @@
                         Silahkan isi Kode Voucher.
                       </div>
                     </div>
+                    <div class="form-group">
+                      <label for="validationCustom01">Kuota</label>
+                      <input type="text" name="quota" class="form-control" id="validationCustom01" placeholder="Kode Voucher" required>
+                      <div class="invalid-feedback">
+                        Silahkan isi Kuota Perhari.
+                      </div>
+                    </div>
                   </div>
                   <div class="card-footer">
                     <button type="submit" class="btn btn-block btn-primary">Save</button>
