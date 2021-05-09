@@ -26,19 +26,6 @@
     }
 }
 
-@media screen and (max-width: 440px) {
-    .arc-container {
-        --arc-core-size: 80px !important;
-    }
-    .arc-container {
-        background-image: url('../images/mobile.jpg') !important;
-    }
-    .arc-reactor {
-        top: 55px !important;
-        left: -3px !important;
-    }
-}
-
 @media screen and (min-width: 3840px) {
     /* //For 4K Displays (Ultra HD) */
     .arc-container {

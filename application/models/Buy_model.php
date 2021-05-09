@@ -7,7 +7,7 @@ function add_visitor_daily_buy($data)
 		$insert = $this->db->insert('visitor_buy', $data);
 		return $insert;					
 	}
-
+ 
 function buy_count($date)
 	{	
 

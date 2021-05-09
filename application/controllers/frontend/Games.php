@@ -16,6 +16,7 @@ class Games extends CI_Controller {
 		
 		//library
 		$this->load->library('user_agent');
+		
 
 		//model
 		$this->load->model('games_model');
@@ -50,12 +51,18 @@ class Games extends CI_Controller {
 
 	}
 
-	public function play()
+	public function play() 
 	{
 		$data['title'] = 'Sharp Games Play';						
 		$data['main_content'] = 'frontend/games/play';
 		$this->load->view('template/frontend/view', $data);
-
+		
+		if ($this->agent->is_mobile())
+		{
+			$data['main_content'] = 'frontend/games/mobile';
+			$this->load->view('template/frontend/view', $data);
+		}
+ 
 	}
 
 	public function success()

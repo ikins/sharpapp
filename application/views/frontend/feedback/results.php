@@ -1,14 +1,15 @@
-<div class="bg-feedback set-question-top">
-  <div class="container">
-    <div class="row set-padding justify-content-center">
-      <div class="col-md-10 m-t-30">
-        <img src="<?php echo base_url("assets/"); ?>images/feedback/thanks.png" class="img-fluid">
+<div class="container-feedback">
+  <div class="feedback">
+      <div class="bg_feedback">
+        <div class="container">
+            <div class="row d-flex h-100 justify-content-center">
+              <div class="col-12 from-qs-1">
+              <div class="col-md-12 tq">
+                <img src="<?php echo base_url("assets/"); ?>images/feedback/thanks.png" class="img-fluid results">
+              </div>
+            </div>
+          
+        </div>
       </div>
-      <!-- <div class="col-md-10 btn-feedback-thanks">
-          <div class="text-center">
-            <button type="submit" class="btn btn-danger" id="feedback-close">TUTUP</button>
-          </div>
-      </div> -->
-    </div>
-    </div>
+  </div>
 </div>

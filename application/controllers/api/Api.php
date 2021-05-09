@@ -56,7 +56,7 @@ class Api extends CI_Controller {
          }else{
 
             $data = array(
-
+ 
                 'game_token'     => $tokenID,
                 'game_id'        => $gameID,
                 'game_score'     => $score

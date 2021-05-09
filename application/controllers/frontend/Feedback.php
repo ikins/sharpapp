@@ -311,7 +311,7 @@ class Feedback extends CI_Controller {
 		$_email = $this->input->post('email');
 		//send email
 		redirect('feedback/share/results');
-	}
+	} 
 
 	public function feedback_share_results()
 	{
