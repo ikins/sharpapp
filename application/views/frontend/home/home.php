@@ -19,7 +19,7 @@
         var context = new AudioContext();
         }
     </script>
-</head>
+</head> 
 <body class="layout-top-nav">
     <!-- welcome -->
     <div class="arc-container" id="bg_video">
